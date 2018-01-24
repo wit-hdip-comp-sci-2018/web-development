@@ -122,8 +122,8 @@ body
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Lab-1 HTML Structure">
-      Lab-1 HTML Structure
+    <a class="item" data-tab="Lab-1.2: HTML Structure">
+      Lab-1.2: HTML Structure
     </a>
     
     <a class="item" data-tab="01">
@@ -158,13 +158,13 @@ body
     
       
         <a class="item" href="../../topic01/book-a/index.html">
-          Lab-1 Editing HTML
+          Lab-1.1: Editing HTML
         </a>
       
     
       
         <a class="active item" href="../../topic01/book-b/index.html">
-          Lab-1 HTML Structure
+          Lab-1.2: HTML Structure
         </a>
       
     
@@ -173,27 +173,22 @@ body
     <div class="ui basic segment" id="labchat">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Lab-1 HTML Structure">
+      <div  class="ui tab segment lab" data-tab="Lab-1.2: HTML Structure">
         <h1>Objectives</h1>
-<p>The labs are where you will do the real learning in this module. In Lab0-01 you will become familiar with the editor Sublime. We will then use this editor to create a simple multi-page web site containing a small variety of text, images and links. In this lab we will explore some of the basic features of CSS, including colours, font and interesting techniques for setting styles across entire sections of a page.</p>
+<p>folders · head · title · link · image · references</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
         <h1>Setup</h1>
-<h2>Instructions for working in Walton Building PC Labs:</h2>
-<p>If you are working on the workstations in the IT Building, choose Sublime Text 2 from the programs menu.</p>
-<p><img src="./img/00.png" alt=""></p>
-<p>Proceed with the next step of the lab.</p>
-<h2>Instructions for working on your own laptop</h2>
-<p>Download and install Sublime Text 2 from</p>
+<p>Make sure you have downloaded and installed Sublime Text 3 from</p>
 <ul>
 <li><a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></li>
 </ul>
 <p>Select the appropriate download for your laptop (OS, Windows, Linux)</p>
-<p>This site has some useful tutorial videos in how to use Sublime Text 2. You should at least watch the first 2.</p>
+<p>This site has some useful tutorial videos in how to use Sublime Text. You should at least watch the first 2 videos.</p>
 <ul>
-<li>&lt;<a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2">http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2</a></li>
+<li><a href="http://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2">Sublime Tutorial</a></li>
 </ul>
 <p>We recommend using Chrome as your web browser.</p>
 
@@ -201,11 +196,11 @@ body
      
       <div  class="ui tab segment lab" data-tab="02">
         <h1>First Project</h1>
-<p>If you are working on a pc in the IT lab, open your WebDevelopment folder that you created last week (on your G drive or USB drive), inside that folder create another folder called Lab01.</p>
-<p>Open Sublime and choose Open Folder from the File menu. Navigate to the WebDevelopment folder and choose click OK.</p>
-<p>In sublime click on the WebDevelopment folder, you should see the Lab1 folder appear.</p>
+<p>Consider creating a folder structure for your labs - starting with a folder called <code>web-development</code></p>
+<p>Open Sublime and choose <code>Open</code> from the File menu, navigate to the <code>web-development</code> folder you have just created and click <code>Open</code>.</p>
+<p>In sublime click on the <code>web-development</code> folder, right click - and select <code>New Folder</code>. Enter the folder name <code>lab01</code>. In Sublime, you should see the following in the sidebar:</p>
 <p><img src="./img/01.png" alt=""></p>
-<p>Chose New File from the File menu, a new blank page should appear in the sublime window. Click Save on the File menu and name the file index.html, save it into the Lab1 folder. You should see the file name appear in the left panel in sublime.</p>
+<p>Chose New File from the File menu, a new blank page should appear in the sublime window. Click <code>Save</code> on the File menu and name the file <code>index.html</code>, save it into the lab01 folder. You should see the file name appear in the left panel in sublime.</p>
 <p><img src="./img/02.png" alt=""></p>
 <p>Now in File Explorer create another folder in Lab1 that is called images</p>
 <p><img src="./img/03.png" alt=""></p>
@@ -222,8 +217,7 @@ body
       <div  class="ui tab segment lab" data-tab="03">
         <h1>HTML pages</h1>
 <p>We are going to create a web site that is based on the Google Play site or the Apple app store. It will present mobile apps, music, and movies to the user.</p>
-<p>Choose New File from the File menu, next choose Save from the file menu and name it apps.html
-Do the same for a file named movies.html and one called music.html</p>
+<p>Choose New File from the File menu, next choose Save from the file menu and name it <code>apps.html</code></p>
 <p>You should now have the following folder and file structure:</p>
 <p><img src="./img/05.png" alt=""></p>
 <p>Next you will write some html code. Copy and paste in the following code:</p>
@@ -273,7 +267,7 @@ Do the same for a file named movies.html and one called music.html</p>
      &lt;hr&gt;
      &lt;h3&gt;Macware Business Bundle&lt;/h3&gt;
      &lt;p&gt;
-       Here comes the next bundle for march. This time its macware who publish a bundle. The so called macware Business Bundle contains 6 apps at a price of only $29.99 instead of $199.94. So you can save around 84%. There is n...
+       Here comes the next bundle for march. This time its macware who publish a bundle. The so called macware Business Bundle contains 6 apps at a price of only $29.99 instead of $199.94. So you can save around 84%. 
      &lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -286,9 +280,10 @@ Do the same for a file named movies.html and one called music.html</p>
      
       <div  class="ui tab segment lab" data-tab="04">
         <h1>CSS</h1>
-<p>We will now introduce a stylesheet into our project. Stylesheets are usually maintained in separate files with the .css extension. Choose New File from the File menu and name it &#39;style.css&#39;. </p>
+<p>We will now introduce a stylesheet into our project. Stylesheets are usually maintained in separate files with the .css extension. Choose New File from the File menu and name it <code>style.css</code>. </p>
 <p>The folder structure now looks like this:</p>
-<p><img src="./img/06.png" alt=""></p>
+<p><img src="./img/12.png" alt=""></p>
+<p>Make sure this file is in the <code>lab01</code> folder - and not in the <code>images</code> folder. This can be hard to see exactly in sublime - so consult Explore/Finder to make sure it is in the correct location.</p>
 <p>We bind this file into the project by &#39;linking&#39; it to our home page. This must be incorporated into the <code>&lt;head</code>&gt; element of each page. Currently index.html head section looks like this:</p>
 <pre><code class="lang-html">  &lt;head&gt;
     &lt;title&gt;Bundle APP Store&lt;/title&gt;
@@ -333,44 +328,24 @@ Do the same for a file named movies.html and one called music.html</p>
 <ul>
 <li><a href="https://github.com/wit-web-dev-2016/app-store/releases/tag/lab.1.end">https://github.com/wit-web-dev-2016/app-store/releases/tag/lab.1.end</a></li>
 </ul>
-<h2>1. Index.html</h2>
+<h2>1: Index.html</h2>
 <p>Just to get used to the editor, create a few more new apps in the &#39;apps.html&#39;, perhaps you can locate content from some web source (including images). Try to identify and replicate the way the code is indented in the existing content.</p>
-<h2>2. New pages</h2>
-<p>Incorporate new content into a directions.html page. It can contain any content you think would be useful. Make sure you add the hyperlinks to the home page and to the app page so that you can navigate to them from the index.html page and back to the index.html page. </p>
-<p>We have not covered hyperlinks yet in this lab. Read this documentation here:</p>
+<h2>2: New pages</h2>
+<p>Incorporate content into a new <code>directions.html</code> page. It can contain any content you think would be useful. Incorporate some links in each page so you can move around in the site from page to page.</p>
+<h2>3: Link the CSS file to all pages</h2>
+<p>Currently you may not have the CSS file &#39;linked&#39; to app.html or the <code>directions.html</code> page. i.e. only index.html is styled with the css rules you have defined. See if you can link the other pages now.</p>
+<h2>4: HTML Reference</h2>
+<p>If you are finding initial contact with HTML a little challenging - this is an excellent starter resource to review:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics</a></li>
 </ul>
-<p>and see if you can create some links.</p>
-<h2>3. Link the CSS file to all pages</h2>
-<p>Currently you may not have the CSS file &#39;linked&#39; to all pages. i.e. only index.html is styled with the css rules you have defined. See if you can link the other pages now.</p>
-<h2>4. Lists</h2>
+<p>It is short read.</p>
+<h2>5: Lists</h2>
 <p>In this lab you used the element <code>&lt;ul</code>&gt;
 Investigate the use of <code>&lt;ol</code>&gt; , find out the differences between these elements here:</p>
 <ul>
-<li><a href="http://www.w3.org/TR/html401/struct/lists.html">http://www.w3.org/TR/html401/struct/lists.html</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists">https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_lists</a></li>
 </ul>
-<h2>5. Images</h2>
-<p>Investigate reducing the size of the images. Try using an image editor to reduce their size to 10% smaller. It is important to have some understanding of using an image editor. The most basic available on all windows pc/laptop&#39;s is Paint which has a resize option on the toolbar.</p>
-<h2>6. Free Code Camp</h2>
-<p>Have a look at this site here:</p>
-<ul>
-<li><a href="http://freecodecamp.com/">http://freecodecamp.com/</a></li>
-</ul>
-<p>This is a self paced instructional web site covering a superset of the technologies we will explore in this course. You will need to sign in to make use of the materials effectively. There are a range of sign in options - we recommend you first create an account here:</p>
-<ul>
-<li><a href="https://github.com/">https://github.com/</a></li>
-</ul>
-<p>and then when you sign up with FreeCodeCamp, you select the &#39;Sign in with Github&#39; option.</p>
-<p>Once you are signed in, there will be an initially overwhelming range of options and features. To get started, restrict your attention to &#39;Map&#39;:</p>
-<ul>
-<li><a href="http://freecodecamp.com/map">http://freecodecamp.com/map</a></li>
-</ul>
-<p>In particular the <code>HTML5 and CSS</code> lessons here:</p>
-<ul>
-<li><a href="http://freecodecamp.com/map#html5-and-css">http://freecodecamp.com/map#html5-and-css</a></li>
-</ul>
-<p>Use any spare time you have at the end of our web development labs to pick your way through these particular lessons.</p>
 
       </div>
      
