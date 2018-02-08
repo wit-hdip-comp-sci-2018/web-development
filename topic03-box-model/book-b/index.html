@@ -1,24 +1,43 @@
- <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
-     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-     <script>hljs.initHighlightingOnLoad();</script>
-   </head>
-  <body class="uk-background-muted">
-    
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
-  <style>
-    
-    
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
 
 code
 {
@@ -51,52 +70,134 @@ h3
   border-bottom: thin solid black;
 }
 
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
 
 
-  </style>
 
-  <div uk-sticky>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-subnav-left">
-        <ul class="uk-background-secondary uk-subnav-pill uk-subnav-divider">
-          <li class="uk-active"><a href="../index.html">3: The Box Model </a></li>
-        </ul>
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          3: The Box Model 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-3b Multicolumn">
+            Lab-3b Multicolumn
+          </a>
+        
+          <a class="item" data-tab="01">
+            01
+          </a>
+        
+          <a class="item" data-tab="02">
+            02
+          </a>
+        
+          <a class="item" data-tab="03">
+            03
+          </a>
+        
+          <a class="item" data-tab="04">
+            04
+          </a>
+        
+          <a class="item" data-tab="05">
+            05
+          </a>
+        
+          <a class="item" data-tab="06">
+            06
+          </a>
+        
+          <a class="item" data-tab="07">
+            07
+          </a>
+        
+          <a class="item" data-tab="08">
+            08
+          </a>
+        
+          <a class="item" data-tab="Exercises">
+            Exercises
+          </a>
+        
+        <div class="item">
+          
+        </div>
       </div>
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
           
-            <li><a href="#">Lab-3b Multicolumn</a></li>
+            <a class="item" href="../../topic01-introducing-html/book-a/index.html">
+              Lab-1.1: Editing HTML
+            </a>
           
-            <li><a href="#">01</a></li>
+        
           
-            <li><a href="#">02</a></li>
+            <a class="item" href="../../topic01-introducing-html/book-b/index.html">
+              Lab-1.2: HTML Structure
+            </a>
           
-            <li><a href="#">03</a></li>
+        
           
-            <li><a href="#">04</a></li>
+            <a class="item" href="../../topic02-inctroducing-css/book/index.html">
+              Lab-2 CSS Intro
+            </a>
           
-            <li><a href="#">05</a></li>
+        
           
-            <li><a href="#">06</a></li>
+            <a class="item" href="../../topic03-box-model/book-a/index.html">
+              Lab-3a Layout
+            </a>
           
-            <li><a href="#">07</a></li>
+        
           
-            <li><a href="#">08</a></li>
+            <a class="active item" href="../../topic03-box-model/book-b/index.html">
+              Lab-3b Multicolumn
+            </a>
           
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
+        
       </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-3b Multicolumn">
+              <h1>Objectives</h1>
 <p>header · maincontent · navigation · footer · primary · secondary</p>
-</li>
-      
-        <li> <h1>Setup</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="01">
+              <h1>Setup</h1>
 <p>In Sublime create a new Lab03b folder. This time we will not be using any content from the previous labs.</p>
 <p>In this project create two files:</p>
 <ul>
@@ -167,9 +268,11 @@ h3
 &lt;/html&gt;</code></pre>
 <p>Reloading in the browser, it should look like this:</p>
 <p><img src="./img/00.png" alt=""></p>
-</li>
-      
-        <li> <h1>Div</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="02">
+              <h1>Div</h1>
 <p>We are now going to divide our content into a series of sections:</p>
 <ul>
 <li><p>header</p>
@@ -249,9 +352,11 @@ h3
 <p>For instance, try collapsing everything in the page. This can be done by pressing all of the arrow signs in the left hand margin. </p>
 <p>You may be able to generate a view something like this:</p>
 <p><img src="./img/02.png" alt=""></p>
-</li>
-      
-        <li> <h1>Body style</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="03">
+              <h1>Body style</h1>
 <p>We already have an empty style sheet in place. However, it is not yet linked to our home page.</p>
 <p>Insert the following into the <code>&lt;head</code>&gt; element of the home.html to tie in the stylesheet:</p>
 <pre><code class="lang-html">    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;home.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
@@ -275,9 +380,11 @@ h3
 <p>Additionally, discover the equivalent notations for html (quite different).</p>
 <p>This rule is stating that we want no top/bottom for the page, however auto for left and right is resizing the margins to be proportional to the container width (the browser window), and equal in size.</p>
 <p>The overall effect is a pleasing border on either size of the page, of equal size.</p>
-</li>
-      
-        <li> <h1>Maincontent</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="04">
+              <h1>Maincontent</h1>
 <p>We will now attempt to &quot;float&quot; the &quot;maincontent&quot; section to the right, with the &quot;navigation&quot; section hopefully moving in to the left.</p>
 <p>Try the following rule:</p>
 <pre><code class="lang-css">#maincontent
@@ -302,9 +409,11 @@ h3
 <p>-</p>
 <p><img src="./img/04.png" alt=""></p>
 <p>As you can see, the &quot;navigation&quot; and &quot;footer&quot; sections have moved up to the left, slipping inside the maincontent. This is because these sections are current obeying the default layout rules. In effect, they will be automatically resizing the fit the available space liberated by the 20% space of the <code>&lt;body</code>&gt; that maincontent has liberated.</p>
-</li>
-      
-        <li> <h1>Navigation</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="05">
+              <h1>Navigation</h1>
 <p>We can introduce a rule to definitively tie the navigation to 20% of the parent size. and float it left (also turning on a border so we can visualize it easier)</p>
 <pre><code class="lang-css">#navigation
 {  
@@ -324,9 +433,11 @@ h3
 }</code></pre>
 <p><img src="./img/06.png" alt=""></p>
 <p>Experiment with other percentages to get a feel for the layout behaviour</p>
-</li>
-      
-        <li> <h1>Header, footer</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="06">
+              <h1>Header, footer</h1>
 <p>We can now target the headder and footer, and move them into place.</p>
 <p>First the header:</p>
 <pre><code class="lang-css">#header
@@ -354,9 +465,11 @@ h3
 <p>Setting clear to &quot;both&quot;, means clear (move below) and blocks floated left or right.</p>
 <p>Refresh produces a pleasing result:</p>
 <p><img src="./img/08.png" alt=""></p>
-</li>
-      
-        <li> <h1>Simplify</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="07">
+              <h1>Simplify</h1>
 <p>Our full CSS is now as follows:</p>
 <pre><code class="lang-css">body
 {
@@ -426,9 +539,11 @@ h3
   clear: both;
 }</code></pre>
 <p>And when we want to remove the border, we can just delete that rule.</p>
-</li>
-      
-        <li> <h1>Primary, secondary</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="08">
+              <h1>Primary, secondary</h1>
 <p>We can also further subdivide sections within existing sections. The &quot;maincontent&quot; section currently contains 6 paragraphs:</p>
 <p><img src="./img/09.png" alt=""></p>
 <p>Using nesting, we can divide these into two sections:</p>
@@ -456,9 +571,11 @@ h3
 }</code></pre>
 <p>This is the final result:</p>
 <p><img src="./img/13.png" alt=""></p>
-</li>
-      
-        <li> <h1>Exercises</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="Exercises">
+              <h1>Exercises</h1>
 <h3>Archive of Completed Lab:</h3>
 <ul>
 <li><a href="./archives/lab04.zip">lab04.zip</a></li>
@@ -527,10 +644,67 @@ h3
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Lorem_ipsum">http://en.wikipedia.org/wiki/Lorem_ipsum</a></li>
 </ul>
-</li>
-      
-    </ul>
-  </div>
 
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
   </body>
- </html>
+</html>
