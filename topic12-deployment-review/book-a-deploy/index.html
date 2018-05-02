@@ -333,7 +333,7 @@ body
 <ul>
 <li><a href="https://www.dropbox.com/install">https://www.dropbox.com/install</a></li>
 </ul>
-<p>When this is installed, a folder called <code>Dropbox</code> will be created on your workstation - which will also be mirrored in the cloud. Make sure you can locate this folders and that it is in fact synced with the cloud.</p>
+<p>When this is installed, a folder called <code>Dropbox</code> will be created on your workstation - which will also be mirrored in the cloud. Make sure you can locate this folder and that it is in fact synced with the cloud.</p>
 
             </div>
           
@@ -351,13 +351,14 @@ body
 <li>Play Version</li>
 <li>Database Settings</li>
 </ul>
+<p>You may want to import the project into Idea to make the changes below.</p>
 <h2>(1)JDK Version</h2>
 <p>Create a new file in the project root:</p>
 <h3>system.properties</h3>
 <pre><code>java.runtime.version=8</code></pre>
 <p>This sets the JDK version our app will need when deployed.</p>
 <h2>(2) Play Version</h2>
-<p>Locate this file</p>
+<p>Locate this file:</p>
 <h2>conf/dependencies.yml</h2>
 <pre><code># Application dependencies
 
@@ -381,6 +382,7 @@ require:
 <pre><code>db=${DATABASE_URL}
 jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
 jpa.ddl=update</code></pre>
+<p>NB: This very last change will mean that YOUR APP WILL NO LONGER RUN LOCALLY! (apologies for the caps). So you will need to reverse the very last change if you want to run locally again.</p>
 
             </div>
           
@@ -403,7 +405,7 @@ jpa.ddl=update</code></pre>
 <p><img src="img/08.png" alt=""></p>
 <p>Give the app a name - this will have to be unique, so perhaps consider using your initials or name in the application name:</p>
 <p><img src="img/09.png" alt=""></p>
-<p>Press <code>Create App</code> and an application console will be displayed:</p>
+<p>You might also locate the app in Europe. Press <code>Create App</code> and an application console will be displayed:</p>
 <p><img src="img/10.png" alt=""></p>
 <h2>(2) Link to Dropbox</h2>
 <p>One of the options is <code>Dropbox</code> ... press it and you will be asked to authorise against your Dropbox credentials.</p>
@@ -425,6 +427,7 @@ jpa.ddl=update</code></pre>
 <pre><code class="lang-text">https://github.com/heroku/heroku-buildpack-play</code></pre>
 <p>Save changes and the buildpack should be installed:</p>
 <p><img src="img/16.png" alt=""></p>
+<p>The build pack is needed to inform Heroku how a play app is configured and managed.</p>
 
             </div>
           
@@ -434,6 +437,7 @@ jpa.ddl=update</code></pre>
 <p>This will take a minute or so - and will log its progress...</p>
 <p>If all goes well -- it should look like this:</p>
 <p><img src="img/18.png" alt=""></p>
+<p>This could take a minute or two...</p>
 <p>Note the green tick indicating it is deployed. Press <code>View</code> and the app should be available:</p>
 <p><img src="img/19.png" alt=""></p>
 <p>Log in as <code>homer@simpson.com</code>, <code>secret</code></p>
@@ -470,7 +474,7 @@ jpa.ddl=update</code></pre>
 # db=${DATABASE_URL}
 # jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
 # jpa.ddl=update</code></pre>
-<p>Perhaps best to keep this fail NOT in sync with the version on dropbox</p>
+<p>Perhaps best to keep this file NOT in sync with the version on dropbox</p>
 <h2>Deploying Again</h2>
 <p>The procedure for updating the running app is to</p>
 <ul>
@@ -479,24 +483,25 @@ jpa.ddl=update</code></pre>
 </ul>
 <p><img src="img/25.png" alt=""></p>
 <p>In the above example - it has not detected any changes, so will not deploy.</p>
-<p>When deploying, the Build Logs:</p>
+<p>When deploying, the Build Logs become visible:</p>
 <p><img src="img/26.png" alt=""></p>
-<p>These logs are separate from the run time logs described above. You will need to monitors these logs occasionally in case any errors arise.</p>
+<p>These logs are separate from the run time logs described above. You will need to monitor these logs occasionally in case any errors arise.</p>
 
             </div>
           
             <div  class="ui tab segment lab" data-tab="06">
               <h1>Database Dashboard</h1>
-<p>If you have been relying on the </p>
+<p>If you have been relying on this link:</p>
 <ul>
-<li><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#97;&#x74;&#x68;&#111;&#115;&#x74;&#57;&#x30;&#x30;&#x30;&#x2f;&#x40;&#100;&#x62;">&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#97;&#x74;&#x68;&#111;&#115;&#x74;&#57;&#x30;&#x30;&#x30;&#x2f;&#x40;&#100;&#x62;</a> </li>
+<li><a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#116;&#116;&#112;&#x3a;&#47;&#47;&#108;&#111;&#x63;&#97;&#x74;&#x68;&#111;&#115;&#116;&#x39;&#x30;&#x30;&#x30;&#47;&#64;&#x64;&#98;">&#x68;&#116;&#116;&#112;&#x3a;&#47;&#47;&#108;&#111;&#x63;&#97;&#x74;&#x68;&#111;&#115;&#116;&#x39;&#x30;&#x30;&#x30;&#47;&#64;&#x64;&#98;</a> </li>
 </ul>
-<p>link to view the browser when running locally - this will NOT work for the deployed version. </p>
+<p>...to view the browser when running locally - this will NOT work for the deployed version. </p>
 <p>However, Heroku supports a free add-on which fulfils a similiar role:</p>
 <ul>
 <li><a href="https://www.adminium.io/dashboard">https://www.adminium.io/dashboard</a></li>
 </ul>
-<p>Install the Addon on:</p>
+<p>Associating this service with your app is reasonably straightforward, and is all carried via the web interface.</p>
+<p>It will involve installing the Addon:</p>
 <p><img src="img/30.png" alt=""></p>
 <p>This will ask for authorisation:</p>
 <p><img src="img/27.png" alt=""></p>
