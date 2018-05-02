@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+
+    <div class="ui fixed top pointing inverted stackable menu labmenu">
+      <header class="header item">
+        <i id="toc" class="sitemap icon"></i>
+        <a href="../index.html">
+          12: Deployment 
+        </a>
+      </header>
+      <div class="right tab-menu menu">
+        
+          <a class="item" data-tab="Lab-12">
+            Lab-12
+          </a>
+        
+          <a class="item" data-tab="01">
+            01
+          </a>
+        
+          <a class="item" data-tab="02">
+            02
+          </a>
+        
+          <a class="item" data-tab="03">
+            03
+          </a>
+        
+          <a class="item" data-tab="04">
+            04
+          </a>
+        
+          <a class="item" data-tab="05">
+            05
+          </a>
+        
+          <a class="item" data-tab="06">
+            06
+          </a>
+        
+          <a class="item" data-tab="Exercises">
+            Exercises
+          </a>
+        
+        <div class="item">
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="ui segment pushable">
+      <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <br><br>
+        
+          
+            <a class="item" href="../../topic01-introducing-html/book-a/index.html">
+              Lab-1.1: Editing HTML
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic01-introducing-html/book-b/index.html">
+              Lab-1.2: HTML Structure
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic02-inctroducing-css/book/index.html">
+              Lab-2 CSS Intro
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic03-box-model/book-a/index.html">
+              Lab-3a Layout
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic03-box-model/book-b/index.html">
+              Lab-3b Multicolumn
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic04-navigation/book-a/index.html">
+              Lab-4a Navigation 
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic04-navigation/book-b/index.html">
+              Lab-4b Case Study
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic05-templating/book-01-harp/index.html">
+              Lab-5a Harp & Surge
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic05-templating/book-02-templates/index.html">
+              Lab-5b Templating
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic05-templating/book-03-nav-templates/index.html">
+              Lab-5c Templating & Nav
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic06-css-frameworks/book-a/index.html">
+              Lab-6a Semantic UI 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic06-css-frameworks/book-b/index.html">
+              Lab-6b Semantic UI 2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic07-starting-play/book-b-setup-play/index.html">
+              Lab-07a Play Setup
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic07-starting-play/book-c-playlist-1/index.html">
+              Lab-07b Playlist 1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic08-introducing-mvc/book-a-playlist-2/index.html">
+              Lab-08a Playlist-2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic08-introducing-mvc/book-b-playlist-3/index.html">
+              Lab-08b Playlist-3
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic09-forms/book-a-todolist/index.html">
+              Lab-09b Todolist-1
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic09-forms/book-b-playlist-4/index.html">
+              Lab-09a Playlist-4
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic10-sessions/book-sessions/index.html">
+              Lab-10 Todolist-2
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic11-playlist-sessions/book-1/index.html">
+              Lab-11a Playlist Review
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic11-playlist-sessions/book-2/index.html">
+              Lab-11b Playlist 5
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic12-deployment-review/book-a-deploy/index.html">
+              Lab-12
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic12-deployment-review/book-b-sourcetree/index.html">
+              Lab-11a Sourcdtree
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic12-deployment-review/book-c/index.html">
+              Lab-12
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic12-deployment-review/book-c-deploy/index.html">
+              Lab-12
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic12-deployment-review/book-c-git/index.html">
+              Lab-11b Todolist-3
+            </a>
+          
+        
+      </div>
+      <div class="pusher" tabindex="-1">
+        <div class="ui basic segment" id="labchat">
+          <br>
+          
+            <div  class="ui tab segment lab" data-tab="Lab-12">
+              <h1>Objectives</h1>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="01">
+              <h1>Setup.</h1>
+<p>We need 2 free services to get our Play Application live in the Cloud. In this step we create the necessary accounts. We will set up the first 2 here</p>
+<h2>(1) Heroku</h2>
+<p>Visit this site:</p>
+<ul>
+<li><a href="https://www.heroku.com">https://www.heroku.com</a></li>
+</ul>
+<p>And sign up for a new account.</p>
+<p>Once confirmed, log in and go you your Dashboard:</p>
+<ul>
+<li><a href="https://dashboard.heroku.com/apps">https://dashboard.heroku.com/apps</a></li>
+</ul>
+<p>This is a Platform as a Service provided (PaaS), you can read about PaaS here:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Platform_as_a_service">https://en.wikipedia.org/wiki/Platform_as_a_service</a></li>
+</ul>
+<p>We will be using this service to get our Play Applications Live.</p>
+<h1>(2) MYSql</h1>
+<p>The third service is a database service - MySQL.</p>
+<p>Create an account here:</p>
+<ul>
+<li><a href="https://www.freemysqlhosting.net">https://www.freemysqlhosting.net</a></li>
+</ul>
+<p><img src="img/03.png" alt=""></p>
+<p>Press &#39;Start my Free Account&#39; and fill out the form. An email will be generated to confirm your account. The confirmation email will invite you to confirm a generated password:</p>
+<p><img src="img/04.png" alt=""></p>
+<p>You will then be logged in. Switch to the &#39;MySQL Hosting&#39; page:</p>
+<p><img src="img/05.png" alt=""></p>
+<p>The important settings here are:</p>
+<ul>
+<li>Database Host</li>
+<li>Database Name</li>
+<li>Database Username (usually the same as above)</li>
+<li>Database Password</li>
+</ul>
+<p>Three are visible on this page - the password will arrive by email. This can take up to 10 minutes. These 4 settings are needed before proceeding further.</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="02">
+              <h1>Preparing Todolist for Deployment</h1>
+<p>You may have your own version of the Todolist 2 application - which you can use for the rest of this lab. Alternatively, you can download the the version we left at the end of lab 10:</p>
+<ul>
+<li><a href="https://github.com/edeleastar/todolist/releases/tag/todolist-2.end">https://github.com/edeleastar/todolist/releases/tag/todolist-2.end</a></li>
+</ul>
+<p>If you download the zip above, and expand - you will have a complete Play application like this:</p>
+<p><a href="img/06.png"></a></p>
+<p>We need to make the following modifications to prepare it for deployment.</p>
+<h2>(1)JDK Version</h2>
+<p>Create a new file in the project root:</p>
+<h3>system.properties</h3>
+<pre><code>java.runtime.version=8</code></pre>
+<p>This set the JDK version our app will need when deployed</p>
+<h2>(2) Play Version</h2>
+<p>Locate this file</p>
+<h2>conf/dependencies.yml</h2>
+<pre><code># Application dependencies
+
+require:
+    - play</code></pre>
+<p>Change it to the following:</p>
+<pre><code># Application dependencies
+
+require:
+    - play 1.5.0</code></pre>
+<h2>(3) Database Credentials</h2>
+<p>We also need to set the version of Play we will need. Open the file <code>conf/application.conf</code> and locate this line :</p>
+<h2>conf/application.conf</h2>
+<pre><code>db.default=mem</code></pre>
+<p>Comment out this line by placing a <code>#</code> in the first line:</p>
+<pre><code># db.default=mem</code></pre>
+<p>You should have an email from MySqlFreeHosting - giving the settings you need for the database:</p>
+<pre><code>Server: sql7.freemysqlhosting.net
+Name: sql7235057
+Username: sql7235057
+Password: ZaXXoiiXX
+Port number: 3306</code></pre>
+<p>If the email fails to arrive, check your spam. Or perhaps delete the database and create a new from from the control panel.</p>
+<p>This needs to be deconstructed, as follows:</p>
+<pre><code>jdbc:mysql://user:server@&lt;SERVER&gt;:&lt;PORT NUMBER&gt;/&lt;Name&gt;</code></pre>
+<p>Ensure this is completed successfully and <code>application.conf</code>. Place it below the location of the line you commented out earlier.</p>
+<p><img src="img/16.png" alt=""></p>
+<p><img src="img/17.png" alt=""></p>
+<p><img src="img/18.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="03">
+              <h1>Creating &amp; Configure the Application on Heroku</h1>
+<h2>Create Application</h2>
+<p>Back in the Heroku Control panel:</p>
+<p><img src="img/07.png" alt=""></p>
+<p>Select &#39;New` and create a new application.</p>
+<p><img src="img/08.png" alt=""></p>
+<p>Give the app a name - this will have to be unique, so perhaps consider using your initials or name in the application name:</p>
+<p><img src="img/09.png" alt=""></p>
+<p>Press <code>Create App</code> and an application console will be displayed:</p>
+<p><img src="img/10.png" alt=""></p>
+<h2>Link to Dropbox</h2>
+<p>One of the options is <code>Dropbox</code> ... press it and you will be asked to authorise against your Dropbox credentials.</p>
+<p>The Control panel will now have these additional options.</p>
+<p><img src="img/11.png" alt=""></p>
+<p>Also, check your Dropbox folder on your workstation. It should have a new folder - the same name as the application you created - inside an <code>Apps/Heroku</code> folder</p>
+<p><img src="img/12.png" alt=""></p>
+<p>When we are ready to deploy our application we place a copy in here. Do this now, copy the contents of the todolist folder into the newly created folder:</p>
+<p>It might look like this:</p>
+<p><img src="img/13.png" alt=""></p>
+<p>We now have 2 versions of our app - then one we are working on, perhaps in IDEA - and another version we have copied out to a dropbox folder.</p>
+<p>If you are using one of your own projects, be sure to exclude a <code>.git</code> subdirectory (if there is one) from the copy on dropbox.</p>
+<h2>Configure Buildpack</h2>
+<p>We are now almost ready to deploy. We need to do one more step. Back in Heroku, switch to the <code>Settings</code> panel:</p>
+<p><img src="img/14.png" alt=""></p>
+<p>Press the <code>Add Buildpack</code>:</p>
+<p><img src="img/15.png" alt=""></p>
+<p>In the above, we have added this url:</p>
+<pre><code class="lang-text">https://github.com/heroku/heroku-buildpack-play</code></pre>
+<p>Save changes and the buildpack should be installed:</p>
+<p><img src="img/16.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="04">
+              <h1>Creating &amp; Configure the Application on Heroku</h1>
+<h2>Create Application</h2>
+<p>Back in the Heroku Control panel:</p>
+<p><img src="img/07.png" alt=""></p>
+<p>Select &#39;New` and create a new application.</p>
+<p><img src="img/08.png" alt=""></p>
+<p>Give the app a name - this will have to be unique, so perhaps consider using your initials or name in the application name:</p>
+<p><img src="img/09.png" alt=""></p>
+<p>Press <code>Create App</code> and an application console will be displayed:</p>
+<p><img src="img/10.png" alt=""></p>
+<h2>Link to Dropbox</h2>
+<p>One of the options is <code>Dropbox</code> ... press it and you will be asked to authorise against your Dropbox credentials.</p>
+<p>The Control panel will now have these additional options.</p>
+<p><img src="img/11.png" alt=""></p>
+<p>Also, check your Dropbox folder on your workstation. It should have a new folder - the same name as the application you created - inside an <code>Apps/Heroku</code> folder</p>
+<p><img src="img/12.png" alt=""></p>
+<p>When we are ready to deploy our application we place a copy in here. Do this now, copy the contents of the todolist folder into the newly created folder:</p>
+<p>It might look like this:</p>
+<p><img src="img/13.png" alt=""></p>
+<p>We now have 2 versions of our app - then one we are working on, perhaps in IDEA - and another version we have copied out to a dropbox folder.</p>
+<p>If you are using one of your own projects, be sure to exclude a <code>.git</code> subdirectory (if there is one) from the copy on dropbox.</p>
+<h2>Configure Buildpack</h2>
+<p>We are now almost ready to deploy. We need to do one more step. Back in Heroku, switch to the <code>Settings</code> panel:</p>
+<p><img src="img/14.png" alt=""></p>
+<p>Press the <code>Add Buildpack</code>:</p>
+<p><img src="img/15.png" alt=""></p>
+<p>In the above, we have added this url:</p>
+<pre><code class="lang-text">https://github.com/heroku/heroku-buildpack-play</code></pre>
+<p>Save changes and the buildpack should be installed:</p>
+<p><img src="img/16.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="05">
+              <h1>Deploy the Application</h1>
+<p>Back in the <code>Deploy</code> panel - we can now press the <code>Deploy</code> button.</p>
+<p>This will take a minute or so - and will log its progress...</p>
+<p>If all goes well -- it should look like this:</p>
+<p><img src="img/18.png" alt=""></p>
+<p>Press <code>View</code> and the app should be available:</p>
+<p><img src="img/19.png" alt=""></p>
+<p>Log in as <code>homer@simpson.com</code>, <code>secret</code></p>
+<p><img src="img/20.png" alt=""></p>
+<p><img src="img/21.png" alt=""></p>
+<p>You should be able to ad and remove todos. Log out, sign up a new user etc...</p>
+<h2>View Logs</h2>
+<p>Back in the Heroku Console - select <code>more</code> on the top right and select <code>View logs</code></p>
+<p><img src="img/22.png" alt=""></p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="06">
+              <p>#</p>
+
+            </div>
+          
+            <div  class="ui tab segment lab" data-tab="Exercises">
+              <h1>Solution</h1>
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+</html>

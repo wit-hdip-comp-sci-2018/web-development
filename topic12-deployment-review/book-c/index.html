@@ -266,14 +266,32 @@ body
           
         
           
-            <a class="active item" href="../../topic12-deployment-review/book-a/index.html">
+            <a class="active item" href="../../topic12-deployment-review/book-a-deploy/index.html">
               Lab-12
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic12-deployment-review/book-b-sourcetree/index.html">
+              Lab-11a Sourcdtree
             </a>
           
         
           
             <a class="active item" href="../../topic12-deployment-review/book-c/index.html">
               Lab-12
+            </a>
+          
+        
+          
+            <a class="active item" href="../../topic12-deployment-review/book-c-deploy/index.html">
+              Lab-12
+            </a>
+          
+        
+          
+            <a class="item" href="../../topic12-deployment-review/book-c-git/index.html">
+              Lab-11b Todolist-3
             </a>
           
         
@@ -289,34 +307,98 @@ body
             </div>
           
             <div  class="ui tab segment lab" data-tab="01">
-              <h1>Git</h1>
-<p>For this lab, you must have your repository on github.com. See Lab 11 for guidance and examples using Sourcetree.</p>
-<h1>Heroku</h1>
-<p>Create an new account on Heroku:</p>
+              <h2>Heroku &amp; MySql</h2>
+<p>We need 2 free services to get our Play Application live in the Cloud. In this step we create the necessary accounts. </p>
+<h2>(1) Heroku</h2>
+<p>Visit this site:</p>
 <ul>
-<li><a href="https://www.heroku.com/">https://www.heroku.com/</a></li>
+<li><a href="https://www.heroku.com">https://www.heroku.com</a></li>
 </ul>
-<p>and log in.</p>
+<p>And sign up for a new account.</p>
+<p>Once confirmed, log in and go you your Dashboard:</p>
+<ul>
+<li><a href="https://dashboard.heroku.com/apps">https://dashboard.heroku.com/apps</a></li>
+</ul>
+<p>This is a Platform as a Service provided (PaaS), you can read about PaaS here:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Platform_as_a_service">https://en.wikipedia.org/wiki/Platform_as_a_service</a></li>
+</ul>
+<p>We will be using this service to get our Play Applications Live.</p>
+<h1>(2) MYSql</h1>
+<p>The third service is a database service - MySQL.</p>
+<p>Create an account here:</p>
+<ul>
+<li><a href="https://www.freemysqlhosting.net">https://www.freemysqlhosting.net</a></li>
+</ul>
+<p><img src="img/03x.png" alt=""></p>
+<p>Press &#39;Start my Free Account&#39; and fill out the form. An email will be generated to confirm your account. The confirmation email will invite you to confirm a generated password:</p>
+<p><img src="img/04x.png" alt=""></p>
+<p>You will then be logged in. Switch to the &#39;MySQL Hosting&#39; page:</p>
+<p><img src="img/05x.png" alt=""></p>
+<p>The important settings here are:</p>
+<ul>
+<li>Database Host</li>
+<li>Database Name</li>
+<li>Database Username (usually the same as above)</li>
+<li>Database Password</li>
+</ul>
+<p>Three are visible on this page - the password will arrive by email. This can take up to 10 minutes. These 4 settings are needed before proceeding further.</p>
 
             </div>
           
             <div  class="ui tab segment lab" data-tab="02">
-              <h1>Prepare the Play App</h1>
-<p>Create a new files in your project called <code>ProcFile</code> - in the root of the project:</p>
-<h2>ProcFile</h2>
-<pre><code>web: play run --http.port=$PORT $PLAY_OPTS</code></pre>
-<p>In the conf folder, edit <code>application.conf</code> and locate the database configuration (around line 80):</p>
-<h2>conf/application.conf</h2>
-<pre><code># db.default=mem
+              <h1>Preparing Todolist for Deployment</h1>
+<p>Todolist application will need some additional settings if it is to be deployed successfully:</p>
+<ul>
+<li>The JDK version</li>
+<li>The Version of the Play framework </li>
+<li>The Database credentials</li>
+</ul>
+<h2>(1)JDK Version</h2>
+<p>Create a new file in the project root:</p>
+<h3>system.properties</h3>
+<pre><code>java.runtime.version=8</code></pre>
+<p>This set the JDK version our app will need when deployed</p>
+<h2>(2) Play Version</h2>
+<p>Locate this file</p>
+<h2>conf/dependencies.yml</h2>
+<pre><code># Application dependencies
 
-db=${DATABASE_URL}
-jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
+require:
+    - play</code></pre>
+<p>Change it to the following:</p>
+<pre><code># Application dependencies
+
+require:
+    - play 1.5.0</code></pre>
+<h2>(3) Database Credentials</h2>
+<p>We also need to set the version of Play we will need. Open the file <code>conf/application.conf</code> and locate this line :</p>
+<h2>conf/application.conf</h2>
+<pre><code>db.default=mem</code></pre>
+<p>Comment out this line by placing a <code>#</code> in the first line:</p>
+<pre><code># db.default=mem</code></pre>
+<p>You should have an email from MySqlFreeHosting - giving the settings you need for the database:</p>
+<pre><code>Server: sql7.freemysqlhosting.net
+Name: sql7235057
+Username: sql7235057
+Password: ZaXXoiiXX
+Port number: 3306</code></pre>
+<p>If the email fails to arrive, check your spam. Or perhaps delete the database and create a new from from the control panel.</p>
+<p>This needs to be deconstructed, and placed in a specific form in the <code>conf/application.conf</code> file:</p>
+<pre><code>db.url=jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7234967
+db.driver=com.mysql.jdbc.Driver
+db.user=sql7234967
+db.pass=ZaXXoiiXX
 jpa.ddl=update</code></pre>
-<p>In the above we commented out tue <code>db.default=mem</code> line, and included three new lines.</p>
-<p>Commit these changes:</p>
-<p><img src="img/04.png" alt=""></p>
-<p>... and the push to github:</p>
-<p><img src="img/05.png" alt=""></p>
+<p>The <code>db.driver</code> is always <code>db.driver=com.mysql.jdbc.Driver</code></p>
+<p>The <code>db.user</code> and <code>db.pass</code> are the <code>Username</code> and <code>Password</code> from the emailed credentials</p>
+<p>The <code>db.url</code> is a bit more involved and is structured as:</p>
+<pre><code>jdbc:mysql://&lt;SERVER&gt;:&lt;PORT NUMBER&gt;/&lt;Name&gt;</code></pre>
+<p>Ensure this is completed successfully and <code>application.conf</code>. Place it below the location of the line you commented out earlier.</p>
+<p>Ensure this is completed successfully and <code>application.conf</code>. Place it below the location of the line you commented out earlier.</p>
+<p><img src="img/16.png" alt=""></p>
+<p><img src="img/17.png" alt=""></p>
+<p><img src="img/18.png" alt=""></p>
 
             </div>
           
@@ -328,7 +410,7 @@ jpa.ddl=update</code></pre>
 <p><img src="img/07.png" alt=""></p>
 <p>In the <code>Deploy</code> screen, press <code>Connect to GitHib</code>:</p>
 <p><img src="img/08.png" alt=""></p>
-<p>.. and on the next screen, enter your github + repositort name and press connect:</p>
+<p>.. and on the next screen, enter your github + repository name and press connect:</p>
 <p><img src="img/09.png" alt=""></p>
 <p>Then press the <code>Enable Automatic Deploys</code> button:</p>
 <p><img src="img/10.png" alt=""></p>
@@ -336,6 +418,15 @@ jpa.ddl=update</code></pre>
 <p><img src="img/13.png" alt=""></p>
 <p>You should see the url for the deployed app there.</p>
 <p>If you try to visit it, you will find it is not available just yet.</p>
+<h2>Configure Buildpack</h2>
+<p>We are now almost ready to deploy. We need to do one more step. Back in Heroku, switch to the <code>Settings</code> panel:</p>
+<p><img src="img/14x.png" alt=""></p>
+<p>Press the <code>Add Buildpack</code>:</p>
+<p><img src="img/15x.png" alt=""></p>
+<p>In the above, we have added this url:</p>
+<pre><code class="lang-text">https://github.com/heroku/heroku-buildpack-play</code></pre>
+<p>Save changes and the buildpack should be installed:</p>
+<p><img src="img/16x.png" alt=""></p>
 
             </div>
           
