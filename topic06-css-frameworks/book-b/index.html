@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,332 +7,348 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      
+  </head>
+  <style>
+    
 
-body
-{
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
 }
 
-figcaption
-{
-  margin-bottom: 20px;
+p {
+  margin: 0.5em;
 }
 
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-code
-{
+pre code {
   font-family: "Monaco";
-  font-size: 110%;
+  font-size: 100%;
 }
 
-img
-{
-  padding:1px;
-  border:1px solid black;
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1
-{
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
   font-style:italic;
   font-size:130%;
-  border-bottom:thin solid black;
 }
 
-h2
-{
+h2 {
   font-size:110%;
-  border-bottom: thin solid black;
 }
 
-h3
-{
+h3 {
   font-size:100%;
-  border-bottom: thin solid black;
-}
-
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
 }
 
 
 
-    </style>
-  </head>
+  </style>
+<body>
 
-  <body>
-    
-    
-
-    <div class="ui fixed top pointing inverted stackable menu labmenu">
-      <header class="header item">
-        <i id="toc" class="sitemap icon"></i>
-        <a href="../index.html">
-          6: CSS Frameworks 
-        </a>
-      </header>
-      <div class="right tab-menu menu">
-        
-          <a class="item" data-tab="Lab-6b Semantic UI 2">
-            Lab-6b Semantic UI 2
-          </a>
-        
-          <a class="item" data-tab="01">
-            01
-          </a>
-        
-          <a class="item" data-tab="02">
-            02
-          </a>
-        
-          <a class="item" data-tab="03">
-            03
-          </a>
-        
-          <a class="item" data-tab="04">
-            04
-          </a>
-        
-          <a class="item" data-tab="05">
-            05
-          </a>
-        
-          <a class="item" data-tab="06">
-            06
-          </a>
-        
-          <a class="item" data-tab="07">
-            07
-          </a>
-        
-          <a class="item" data-tab="08">
-            08
-          </a>
-        
-          <a class="item" data-tab="09">
-            09
-          </a>
-        
-          <a class="item" data-tab="10">
-            10
-          </a>
-        
-          <a class="item" data-tab="Exercises">
-            Exercises
-          </a>
-        
-        <div class="item">
+  
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
           
-        </div>
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1.1: Editing HTML
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1.2: HTML Structure
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic02-inctroducing-css/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-2 CSS Intro
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-3a Layout
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-3b Multicolumn
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4a Navigation 
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-4b Case Study
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-01-harp/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-5a Harp & Surge
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-02-templates/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-5b Templating
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-03-nav-templates/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-5c Templating & Nav
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-6a Semantic UI 1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-6b Semantic UI 2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-b-setup-play/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a Play Setup
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-c-playlist-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b Playlist 1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-a-playlist-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08a Playlist-2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-b-playlist-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08b Playlist-3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-a-todolist/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09b Todolist-1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-b-playlist-4/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09a Playlist-4
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic10-sessions/book-sessions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10 Todolist-2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11a Playlist Review
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11b Playlist 5
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-a-deploy/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12a Deploy
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-b-sourcetree/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12b Git Setup
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-c-git/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12c Git Usage
+                </a>
+              </li>
+            
+          
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="ui segment pushable">
-      <div class="ui inverted labeled icon left inline vertical sidebar menu">
-        <br><br>
-        
-          
-            <a class="item" href="../../topic01-introducing-html/book-a/index.html">
-              Lab-1.1: Editing HTML
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01-introducing-html/book-b/index.html">
-              Lab-1.2: HTML Structure
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02-inctroducing-css/book/index.html">
-              Lab-2 CSS Intro
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03-box-model/book-a/index.html">
-              Lab-3a Layout
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03-box-model/book-b/index.html">
-              Lab-3b Multicolumn
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04-navigation/book-a/index.html">
-              Lab-4a Navigation 
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04-navigation/book-b/index.html">
-              Lab-4b Case Study
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05-templating/book-01-harp/index.html">
-              Lab-5a Harp & Surge
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05-templating/book-02-templates/index.html">
-              Lab-5b Templating
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05-templating/book-03-nav-templates/index.html">
-              Lab-5c Templating & Nav
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-css-frameworks/book-a/index.html">
-              Lab-6a Semantic UI 1
-            </a>
-          
-        
-          
-            <a class="active item" href="../../topic06-css-frameworks/book-b/index.html">
-              Lab-6b Semantic UI 2
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-starting-play/book-b-setup-play/index.html">
-              Lab-07a Play Setup
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-starting-play/book-c-playlist-1/index.html">
-              Lab-07b Playlist 1
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-introducing-mvc/book-a-playlist-2/index.html">
-              Lab-08a Playlist-2
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-introducing-mvc/book-b-playlist-3/index.html">
-              Lab-08b Playlist-3
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-forms/book-a-todolist/index.html">
-              Lab-09b Todolist-1
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-forms/book-b-playlist-4/index.html">
-              Lab-09a Playlist-4
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic10-sessions/book-sessions/index.html">
-              Lab-10 Todolist-2
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic11-playlist-sessions/book-1/index.html">
-              Lab-11a Playlist Review
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic11-playlist-sessions/book-2/index.html">
-              Lab-11b Playlist 5
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-deployment-review/book-a-deploy/index.html">
-              Lab-12a Deploy
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-deployment-review/book-b-sourcetree/index.html">
-              Lab-12b Git Setup
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-deployment-review/book-c-git/index.html">
-              Lab-12c Git Usage
-            </a>
-          
-        
+
+  <div uk-sticky>
+    <nav uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+          <li class="uk-active"><a href="../index.html">6: CSS Frameworks </a></li>
+        </ul>
       </div>
-      <div class="pusher" tabindex="-1">
-        <div class="ui basic segment" id="labchat">
-          <br>
-          
-            <div  class="ui tab segment lab" data-tab="Lab-6b Semantic UI 2">
-              <h1>Objectives</h1>
-<p>Continue to enhance the IoT web site with additional Semantic-UI styles &amp; Components</p>
 
-            </div>
+
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
           
-            <div  class="ui tab segment lab" data-tab="01">
-              <h1>Setup</h1>
+            <li><a href="#">Lab-6b Semantic UI 2</a></li>
+          
+            <li><a href="#">01</a></li>
+          
+            <li><a href="#">02</a></li>
+          
+            <li><a href="#">03</a></li>
+          
+            <li><a href="#">04</a></li>
+          
+            <li><a href="#">05</a></li>
+          
+            <li><a href="#">06</a></li>
+          
+            <li><a href="#">07</a></li>
+          
+            <li><a href="#">08</a></li>
+          
+            <li><a href="#">09</a></li>
+          
+            <li><a href="#">10</a></li>
+          
+            <li><a href="#">Exercises</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Objectives</h1>
+<p>Continue to enhance the IoT web site with additional Semantic-UI styles &amp; Components</p>
+</li>
+      
+        <li> <h1>Setup</h1>
 <p>This lab assumes you have completed the last lab - an archive of the completed project can be found here:</p>
 <ul>
 <li><a href="https://github.com/wit-computing/iot-web/releases/tag/Lab05a">https://github.com/wit-computing/iot-web/releases/tag/Lab05a</a></li>
 </ul>
 <p>The home page looks something like this:</p>
 <p><img src="img/03.png" alt=""></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="02">
-              <h1>Icons</h1>
+</li>
+      
+        <li> <h1>Icons</h1>
 <p>We left the footer from last week looking like this:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>with the task of making it look like this:</p>
@@ -353,11 +371,9 @@ body
   &lt;a href=&quot;href=&#39;http://twitter.com/ComputingAtWIT&quot;&gt; &lt;i class=&quot;large twitter icon&quot;&gt;&lt;/i&gt; &lt;/a&gt;
   &lt;a href=&quot;href=&#39;http://www.linkedin.com/pub/computing-at-wit&quot;&gt;  &lt;i class=&quot;large linkedin icon&quot;&gt;&lt;/i&gt; &lt;/a&gt;
 &lt;/footer&gt;</code></pre>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="03">
-              <h1>Background colours</h1>
+</li>
+      
+        <li> <h1>Background colours</h1>
 <p>We will make the curriculum a little more eye catching but introducing some colour into each of the columns.</p>
 <p>The framework defines a set of colours we can use:</p>
 <p><img src="img/06.png" alt=""></p>
@@ -412,11 +428,9 @@ body
   &lt;/section&gt;
 ...</code></pre>
 <p><img src="img/08.png" alt=""></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="04">
-              <h1>Icons</h1>
+</li>
+      
+        <li> <h1>Icons</h1>
 <p>We have already seen how to integrate icons into our site in step 2 (twitter, facebook and linkedin). </p>
 <p>We can also enhance other aspects of the site using icons - perhaps as a visual cue or aid, or also a a prompt for navigability:</p>
 <p><img src="img/09.png" alt=""></p>
@@ -587,11 +601,9 @@ body
 
 &lt;/section&gt;</code></pre>
 <p><img src="img/11.png" alt=""></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="05">
-              <h1>Padding, Raised and Stacked Segments</h1>
+</li>
+      
+        <li> <h1>Padding, Raised and Stacked Segments</h1>
 <p>The range of options available for the <code>segment</code> class is worth exploring in detail:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/segment.html">http://semantic-ui.com/elements/segment.html</a></li>
@@ -607,11 +619,9 @@ body
 <pre><code>&lt;section class=&quot;ui three column padded stacked grid segment&quot;&gt;</code></pre>
 <p>Type &#39;stacked&#39; in the other segments. Eg. the header:</p>
 <p><img src="img/17.png" alt=""></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="06">
-              <h1>Strand pages</h1>
+</li>
+      
+        <li> <h1>Strand pages</h1>
 <p>Our strand pages are still not rendering correctly:</p>
 <p><img src="img/18.png" alt=""></p>
 <p>The images are not sized correctly, and the text is not flowing well. This is how we would like it to look:</p>
@@ -699,11 +709,9 @@ body
 </ul>
 <p>Make sure you can relate the above use of these grid parameters to the actual layout.</p>
 <p>When you get this working - adapt all of the strand pages to follow a similar model.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="07">
-              <h1>Banner</h1>
+</li>
+      
+        <li> <h1>Banner</h1>
 <p>Currently the banner/summary section needs some attention:</p>
 <p><img src="img/20.png" alt=""></p>
 <p>The text is not really legible - and is too wide to read. This is what we would like to have:</p>
@@ -908,11 +916,9 @@ body
 &lt;/section&gt;
 
 &lt;/body&gt;</code></pre>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="08">
-              <h1>Responsive Grids</h1>
+</li>
+      
+        <li> <h1>Responsive Grids</h1>
 <p>Try narrowing making the browser very narrow - like this:</p>
 <p><img src="img/23.png" alt=""></p>
 <p>... and this:</p>
@@ -934,11 +940,9 @@ body
 <p><img src="img/26.png" alt="">
 <img src="img/27.png" alt=""></p>
 <p>Try this now and make sure your site is responding as above on small screen sizes.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="09">
-              <h1>Layout</h1>
+</li>
+      
+        <li> <h1>Layout</h1>
 <p>Using the same <code>stackable</code> property - make all the strand pages use stackable segments. They should start to look like this:</p>
 <h1>#</h1>
 <p><img src="img/28.png" alt=""></p>
@@ -946,11 +950,9 @@ body
 <p><img src="img/29.png" alt=""></p>
 <h1>#</h1>
 <p><img src="img/30.png" alt=""></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="10">
-              <h1>Loading Semantic-UI</h1>
+</li>
+      
+        <li> <h1>Loading Semantic-UI</h1>
 <p>Currently, we have downloaded a copy of the Semantic-UI framework and stored it on our <code>assets</code> folder:</p>
 <pre><code>└── public
     ├── assets
@@ -1007,11 +1009,9 @@ body
   &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>These are links to the semantic css libraries + supporting Javascript need for the library.</p>
 <p>Verify that the site works as before.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Exercises">
-              <h1>Solution</h1>
+</li>
+      
+        <li> <h1>Solution</h1>
 <p>This is an archive of the completed project:</p>
 <ul>
 <li><a href="https://github.com/wit-computing/iot-web/releases/tag/Lab06b">https://github.com/wit-computing/iot-web/releases/tag/Lab06b</a></li>
@@ -1032,67 +1032,8 @@ body
 <li><a href="https://getuikit.com/assets/uikit/tests/index.html">https://getuikit.com/assets/uikit/tests/index.html</a></li>
 </ul>
 <p>would enable you to very quickly get an overview of its capabilities and features. Note that on the top of that page you can select any of the components to see them in action.</p>
-
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <script>
-      $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
-});
-
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
-  </body>
-</html>
+</li>
+      
+    </ul>
+  </div>
+</body>
