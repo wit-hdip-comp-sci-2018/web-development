@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,55 +294,57 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">6: CSS Frameworks </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>6: CSS Frameworks </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-6b Semantic UI 2</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">09</a></li>
+            
+              <li><a href="#">10</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-6b Semantic UI 2</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">09</a></li>
-          
-            <li><a href="#">10</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Continue to enhance the IoT web site with additional Semantic-UI styles &amp; Components</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>This lab assumes you have completed the last lab - an archive of the completed project can be found here:</p>
 <ul>
 <li><a href="https://github.com/wit-computing/iot-web/releases/tag/Lab05a">https://github.com/wit-computing/iot-web/releases/tag/Lab05a</a></li>
@@ -347,8 +352,8 @@ Lab-12c Git Usage
 <p>The home page looks something like this:</p>
 <p><img src="img/03.png" alt=""></p>
 </li>
-      
-        <li> <h1>Icons</h1>
+        
+          <li> <h1>Icons</h1>
 <p>We left the footer from last week looking like this:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>with the task of making it look like this:</p>
@@ -372,8 +377,8 @@ Lab-12c Git Usage
   &lt;a href=&quot;href=&#39;http://www.linkedin.com/pub/computing-at-wit&quot;&gt;  &lt;i class=&quot;large linkedin icon&quot;&gt;&lt;/i&gt; &lt;/a&gt;
 &lt;/footer&gt;</code></pre>
 </li>
-      
-        <li> <h1>Background colours</h1>
+        
+          <li> <h1>Background colours</h1>
 <p>We will make the curriculum a little more eye catching but introducing some colour into each of the columns.</p>
 <p>The framework defines a set of colours we can use:</p>
 <p><img src="img/06.png" alt=""></p>
@@ -429,8 +434,8 @@ Lab-12c Git Usage
 ...</code></pre>
 <p><img src="img/08.png" alt=""></p>
 </li>
-      
-        <li> <h1>Icons</h1>
+        
+          <li> <h1>Icons</h1>
 <p>We have already seen how to integrate icons into our site in step 2 (twitter, facebook and linkedin). </p>
 <p>We can also enhance other aspects of the site using icons - perhaps as a visual cue or aid, or also a a prompt for navigability:</p>
 <p><img src="img/09.png" alt=""></p>
@@ -602,8 +607,8 @@ Lab-12c Git Usage
 &lt;/section&gt;</code></pre>
 <p><img src="img/11.png" alt=""></p>
 </li>
-      
-        <li> <h1>Padding, Raised and Stacked Segments</h1>
+        
+          <li> <h1>Padding, Raised and Stacked Segments</h1>
 <p>The range of options available for the <code>segment</code> class is worth exploring in detail:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/segment.html">http://semantic-ui.com/elements/segment.html</a></li>
@@ -620,8 +625,8 @@ Lab-12c Git Usage
 <p>Type &#39;stacked&#39; in the other segments. Eg. the header:</p>
 <p><img src="img/17.png" alt=""></p>
 </li>
-      
-        <li> <h1>Strand pages</h1>
+        
+          <li> <h1>Strand pages</h1>
 <p>Our strand pages are still not rendering correctly:</p>
 <p><img src="img/18.png" alt=""></p>
 <p>The images are not sized correctly, and the text is not flowing well. This is how we would like it to look:</p>
@@ -710,8 +715,8 @@ Lab-12c Git Usage
 <p>Make sure you can relate the above use of these grid parameters to the actual layout.</p>
 <p>When you get this working - adapt all of the strand pages to follow a similar model.</p>
 </li>
-      
-        <li> <h1>Banner</h1>
+        
+          <li> <h1>Banner</h1>
 <p>Currently the banner/summary section needs some attention:</p>
 <p><img src="img/20.png" alt=""></p>
 <p>The text is not really legible - and is too wide to read. This is what we would like to have:</p>
@@ -917,8 +922,8 @@ Lab-12c Git Usage
 
 &lt;/body&gt;</code></pre>
 </li>
-      
-        <li> <h1>Responsive Grids</h1>
+        
+          <li> <h1>Responsive Grids</h1>
 <p>Try narrowing making the browser very narrow - like this:</p>
 <p><img src="img/23.png" alt=""></p>
 <p>... and this:</p>
@@ -941,8 +946,8 @@ Lab-12c Git Usage
 <img src="img/27.png" alt=""></p>
 <p>Try this now and make sure your site is responding as above on small screen sizes.</p>
 </li>
-      
-        <li> <h1>Layout</h1>
+        
+          <li> <h1>Layout</h1>
 <p>Using the same <code>stackable</code> property - make all the strand pages use stackable segments. They should start to look like this:</p>
 <h1>#</h1>
 <p><img src="img/28.png" alt=""></p>
@@ -951,8 +956,8 @@ Lab-12c Git Usage
 <h1>#</h1>
 <p><img src="img/30.png" alt=""></p>
 </li>
-      
-        <li> <h1>Loading Semantic-UI</h1>
+        
+          <li> <h1>Loading Semantic-UI</h1>
 <p>Currently, we have downloaded a copy of the Semantic-UI framework and stored it on our <code>assets</code> folder:</p>
 <pre><code>└── public
     ├── assets
@@ -1010,8 +1015,8 @@ Lab-12c Git Usage
 <p>These are links to the semantic css libraries + supporting Javascript need for the library.</p>
 <p>Verify that the site works as before.</p>
 </li>
-      
-        <li> <h1>Solution</h1>
+        
+          <li> <h1>Solution</h1>
 <p>This is an archive of the completed project:</p>
 <ul>
 <li><a href="https://github.com/wit-computing/iot-web/releases/tag/Lab06b">https://github.com/wit-computing/iot-web/releases/tag/Lab06b</a></li>
@@ -1033,7 +1038,26 @@ Lab-12c Git Usage
 </ul>
 <p>would enable you to very quickly get an overview of its capabilities and features. Note that on the top of that page you can select any of the components to see them in action.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

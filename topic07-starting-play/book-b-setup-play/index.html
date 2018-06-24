@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">7: Applications </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>7: Applications </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-07a Play Setup</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-07a Play Setup</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Install and test Git + the Play Framework</p>
 </li>
-      
-        <li> <h1>Install Git</h1>
+        
+          <li> <h1>Install Git</h1>
 <p>Install git for your platform:</p>
 <ul>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></li>
@@ -340,8 +345,8 @@ Lab-12c Git Usage
 <p>The system might respond with something like this:</p>
 <pre><code>git version 2.16.1.windows.4</code></pre>
 </li>
-      
-        <li> <h1>Installing and Running Play</h1>
+        
+          <li> <h1>Installing and Running Play</h1>
 <h2>Windows</h2>
 <p>Visit the following site:</p>
 <ul>
@@ -403,8 +408,8 @@ $HOME/dev/play-1.5.0
 export PATH</code></pre>
 <p>This assumes you extracted the play archive into the dev folder in your home folder.</p>
 </li>
-      
-        <li> <h1>Create a Play Project</h1>
+        
+          <li> <h1>Create a Play Project</h1>
 <p>Back in the command line, change to a directory where you keep your web development projects and enter:</p>
 <pre><code>play new playdemo</code></pre>
 <p>You should get:</p>
@@ -436,8 +441,8 @@ export PATH</code></pre>
 </ul>
 <p>Explore the contents of the <code>app</code>,  &#39;<code>conf&#39; and</code>public` folders. Use Sublime to this this (for the moment).</p>
 </li>
-      
-        <li> <h1>Running a Play Application</h1>
+        
+          <li> <h1>Running a Play Application</h1>
 <p>Back in the shell, from inside the playdemo folder, type the following command:</p>
 <pre><code>play run</code></pre>
 <p>Play will respond with something like this:</p>
@@ -473,8 +478,8 @@ Listening for transport dt_socket at address: 8000
 </ul>
 <p>Try this a few times to get used to starting/stopping the application</p>
 </li>
-      
-        <li> <h1>Import into Idea</h1>
+        
+          <li> <h1>Import into Idea</h1>
 <p>Now, making sure you are still in the playdemo folder, run this command:</p>
 <pre><code>play idealize</code></pre>
 <p>The system will respond with:</p>
@@ -516,12 +521,31 @@ Listening for transport dt_socket at address: 8000
 <p>This should remove the error - and the project should now be correctly configured.</p>
 <p><img src="img/47.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1:</h2>
 <p>Using steps 02, 04 and 05, create another project - called <code>playdemo1</code> and import into Idea. Experiment with having 2 project open simultaneously.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

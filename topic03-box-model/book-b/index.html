@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,51 +294,53 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">3: The Box Model </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>3: The Box Model </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-3b Multicolumn</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-3b Multicolumn</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>header · maincontent · navigation · footer · primary · secondary</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>In Sublime create a new Lab03b folder. This time we will not be using any content from the previous labs.</p>
 <p>In this project create two files:</p>
 <ul>
@@ -407,8 +412,8 @@ Lab-12c Git Usage
 <p>Reloading in the browser, it should look like this:</p>
 <p><img src="./img/00.png" alt=""></p>
 </li>
-      
-        <li> <h1>Div</h1>
+        
+          <li> <h1>Div</h1>
 <p>We are now going to divide our content into a series of sections:</p>
 <ul>
 <li><p>header</p>
@@ -489,8 +494,8 @@ Lab-12c Git Usage
 <p>You may be able to generate a view something like this:</p>
 <p><img src="./img/02.png" alt=""></p>
 </li>
-      
-        <li> <h1>Body style</h1>
+        
+          <li> <h1>Body style</h1>
 <p>We already have an empty style sheet in place. However, it is not yet linked to our home page.</p>
 <p>Insert the following into the <code>&lt;head</code>&gt; element of the home.html to tie in the stylesheet:</p>
 <pre><code class="lang-html">    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;home.css&quot; media=&quot;screen&quot; /&gt;</code></pre>
@@ -515,8 +520,8 @@ Lab-12c Git Usage
 <p>This rule is stating that we want no top/bottom for the page, however auto for left and right is resizing the margins to be proportional to the container width (the browser window), and equal in size.</p>
 <p>The overall effect is a pleasing border on either size of the page, of equal size.</p>
 </li>
-      
-        <li> <h1>Maincontent</h1>
+        
+          <li> <h1>Maincontent</h1>
 <p>We will now attempt to &quot;float&quot; the &quot;maincontent&quot; section to the right, with the &quot;navigation&quot; section hopefully moving in to the left.</p>
 <p>Try the following rule:</p>
 <pre><code class="lang-css">#maincontent
@@ -542,8 +547,8 @@ Lab-12c Git Usage
 <p><img src="./img/04.png" alt=""></p>
 <p>As you can see, the &quot;navigation&quot; and &quot;footer&quot; sections have moved up to the left, slipping inside the maincontent. This is because these sections are current obeying the default layout rules. In effect, they will be automatically resizing the fit the available space liberated by the 20% space of the <code>&lt;body</code>&gt; that maincontent has liberated.</p>
 </li>
-      
-        <li> <h1>Navigation</h1>
+        
+          <li> <h1>Navigation</h1>
 <p>We can introduce a rule to definitively tie the navigation to 20% of the parent size. and float it left (also turning on a border so we can visualize it easier)</p>
 <pre><code class="lang-css">#navigation
 {  
@@ -564,8 +569,8 @@ Lab-12c Git Usage
 <p><img src="./img/06.png" alt=""></p>
 <p>Experiment with other percentages to get a feel for the layout behaviour</p>
 </li>
-      
-        <li> <h1>Header, footer</h1>
+        
+          <li> <h1>Header, footer</h1>
 <p>We can now target the headder and footer, and move them into place.</p>
 <p>First the header:</p>
 <pre><code class="lang-css">#header
@@ -594,8 +599,8 @@ Lab-12c Git Usage
 <p>Refresh produces a pleasing result:</p>
 <p><img src="./img/08.png" alt=""></p>
 </li>
-      
-        <li> <h1>Simplify</h1>
+        
+          <li> <h1>Simplify</h1>
 <p>Our full CSS is now as follows:</p>
 <pre><code class="lang-css">body
 {
@@ -666,8 +671,8 @@ Lab-12c Git Usage
 }</code></pre>
 <p>And when we want to remove the border, we can just delete that rule.</p>
 </li>
-      
-        <li> <h1>Primary, secondary</h1>
+        
+          <li> <h1>Primary, secondary</h1>
 <p>We can also further subdivide sections within existing sections. The &quot;maincontent&quot; section currently contains 6 paragraphs:</p>
 <p><img src="./img/09.png" alt=""></p>
 <p>Using nesting, we can divide these into two sections:</p>
@@ -696,8 +701,8 @@ Lab-12c Git Usage
 <p>This is the final result:</p>
 <p><img src="./img/13.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h3>Archive of Completed Lab:</h3>
 <ul>
 <li><a href="./archives/lab04.zip">lab04.zip</a></li>
@@ -767,7 +772,26 @@ Lab-12c Git Usage
 <li><a href="http://en.wikipedia.org/wiki/Lorem_ipsum">http://en.wikipedia.org/wiki/Lorem_ipsum</a></li>
 </ul>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

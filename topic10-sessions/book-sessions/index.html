@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,51 +294,53 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">10: Sessions </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>10: Sessions </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-10 Todolist-2</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-10 Todolist-2</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Incorporate sessions tracking into the todo app</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>The starting point for this lab is the solutions to the Todo List app from the last lab. You will need to have completed these exercises in order to proceed.</p>
 <p>If you still have some exercises not completed, then perhaps download this solution here:</p>
 <ul>
@@ -351,8 +356,8 @@ Lab-12c Git Usage
 </ul>
 <p>Review each of these exercises, and make sure you can follow the essentials of the implementation.</p>
 </li>
-      
-        <li> <h1>Views</h1>
+        
+          <li> <h1>Views</h1>
 <p>Assuming you are working from the sample solution - or your own completed todolist - we will start with the View.</p>
 <h1>Menus</h1>
 <p>Replace the existing menu partial with the following:</p>
@@ -456,8 +461,8 @@ Lab-12c Git Usage
 <p><img src="img/01.png" alt=""></p>
 <p>However, the menu items will not work yet (try them).</p>
 </li>
-      
-        <li> <h1>Accounts Routes + Controler</h1>
+        
+          <li> <h1>Accounts Routes + Controler</h1>
 <p>Introduce the following new routes into the conf/routes file:</p>
 <h2>conf/routes</h2>
 <pre><code>GET    /signup                                  Accounts.signup
@@ -492,8 +497,8 @@ public class Accounts extends Controller
 <p><img src="img/04.png" alt=""></p>
 <p><img src="img/05.png" alt=""></p>
 </li>
-      
-        <li> <h1>Member model</h1>
+        
+          <li> <h1>Member model</h1>
 <p>We need a model to represent users (we will call them members) signed up to our application. Here is the class:</p>
 <h2>app/models/Member.java</h2>
 <pre><code>package models;
@@ -571,7 +576,7 @@ Member(m2):
   password: secret</code></pre>
 <p>Restart the app now - and browse to the database:</p>
 <ul>
-<li><a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6c;&#111;&#99;&#97;&#108;&#x68;&#111;&#115;&#x74;&#58;&#57;&#48;&#48;&#x30;&#x2f;&#x40;&#x64;&#x62;">&#x6c;&#111;&#99;&#97;&#108;&#x68;&#111;&#115;&#x74;&#58;&#57;&#48;&#48;&#x30;&#x2f;&#x40;&#x64;&#x62;</a>
+<li><a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#108;&#x6f;&#99;&#97;&#x6c;&#x68;&#x6f;&#x73;&#116;&#58;&#57;&#48;&#x30;&#48;&#47;&#64;&#x64;&#x62;">&#108;&#x6f;&#99;&#97;&#x6c;&#x68;&#x6f;&#x73;&#116;&#58;&#57;&#48;&#x30;&#48;&#47;&#64;&#x64;&#x62;</a>
 
 </li>
 </ul>
@@ -612,8 +617,8 @@ public class Bootstrap extends Job
   }
 }</code></pre>
 </li>
-      
-        <li> <h1>Signup</h1>
+        
+          <li> <h1>Signup</h1>
 <p>Review our signup form, and notice the action the form triggers:</p>
 <h2>app/views/signup.html</h2>
 <pre><code>...
@@ -635,8 +640,8 @@ public class Bootstrap extends Job
 ...</code></pre>
 <p>Restart the app now - and try the signup form. Register a new Member. Explore the database to see if the Member is actually created in the members table.</p>
 </li>
-      
-        <li> <h1>Login &amp; Logout</h1>
+        
+          <li> <h1>Login &amp; Logout</h1>
 <p>Now for the login form - a new route:</p>
 <h2>conf/routes</h2>
 <pre><code>POST   /authenticate                            Accounts.authenticate</code></pre>
@@ -678,8 +683,8 @@ public class Bootstrap extends Job
 </ul>
 <p>You might notice that the same todos are presented to each member. Clearly there is something wrong here - we should be segmenting them per user.</p>
 </li>
-      
-        <li> <h1>Current User</h1>
+        
+          <li> <h1>Current User</h1>
 <p>To complete the app, a new method in the Accounts controller:</p>
 <h2>app/controller/Accounts.java</h2>
 <pre><code>...
@@ -754,8 +759,8 @@ Member(m2):
   - t3</code></pre>
 <p>Restart the app, and verify that the indicated todos are visible when the user logs in.</p>
 </li>
-      
-        <li> <h1>Delete Todos</h1>
+        
+          <li> <h1>Delete Todos</h1>
 <p>Delete a todo will cause an error:</p>
 <p><img src="img/09.png" alt=""></p>
 <p>We will need to rethink how we do the todo delete method.</p>
@@ -790,8 +795,8 @@ Member(m2):
 <pre><code>        &lt;td&gt; &lt;a href=&quot;/dashboard/${member.id}/deletetodo/${todo.id} &quot; class=&quot;ui tiny red button&quot;&gt; Delete &lt;/a&gt; &lt;/td&gt;</code></pre>
 <p>Restart the app - and verify that the todos can now be deleted successfully.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>Archive of the project so far:</p>
 <ul>
 <li><a href="https://github.com/edeleastar/todolist/releases/tag/todolist-2.end">https://github.com/edeleastar/todolist/releases/tag/todolist-2.end</a></li>
@@ -813,7 +818,26 @@ Member(m2):
 <p>Using this, or your own completed solution from lab 09, try to incorporate the <code>session</code> support we have just implemented in todo into the playlist app.</p>
 <p>Essentially, we would like only members to be able to use the playlist app, and the members playlists are kept separate from other members.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

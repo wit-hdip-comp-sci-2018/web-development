@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 1: Introducing HTML </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 1: Introducing HTML </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-1.1: Editing HTML</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-1.1: Editing HTML</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>editor · files · text · tags · browser · reference </p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>Make sure you download and install Sublime Text 3 from</p>
 <ul>
 <li><a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></li>
@@ -341,8 +346,8 @@ Lab-12c Git Usage
 <p><a href="https://adbconnect.wit.ie/common/help/en/support/meeting_test.htm">https://adbconnect.wit.ie/common/help/en/support/meeting_test.htm</a></p>
 <p>and run through the tests there...</p>
 </li>
-      
-        <li> <h1>Tips and Hints</h1>
+        
+          <li> <h1>Tips and Hints</h1>
 <p>When creating web pages we will use Sublime as the editor tool. It is like notepad but has nicer features.</p>
 <p>On the left hand side of the editor you can see the folder you are working in and all the files in that folder, similar to what you see in windows explorer or Mac Finder. 
 For example I have created a folder with two files contained in that folder, each of those files is shown indented and below the folder name. For each file you will also see its extension. For example .html</p>
@@ -355,8 +360,8 @@ For example I have created a folder with two files contained in that folder, eac
 <p>It is important to regularly save your work, this might seem obvious but everyone looses work at some point in the semester and you&#39;d be surprised how many say &quot;I just forgot to save it!&quot;</p>
 <p>In sublime if you go to close your files it will prompt you to see if you want to save your work, however better practice is to always save after first creating a new file so that you name it correctly and then as you edit your code you should continually save your work.</p>
 </li>
-      
-        <li> <h1>Introduction Project</h1>
+        
+          <li> <h1>Introduction Project</h1>
 <p>You will create a simple web page for it Starbuzz Coffee shop. They have made a name for itself as the fastest growing coffee shop around. If you’ve seen one on your local corner, look across the street—you’ll see another one. In fact, they’ve grown so quickly, they haven’t even managed to put up a web page yet…and therein lies your big break: By chance, while buying your Starbuzz Chai Tea, you run into
 the Starbuzz CEO… who asks for your help...</p>
 <p><img src="./img/10.png" alt=""></p>
@@ -391,8 +396,8 @@ A spicy drink made with black tea, spices, milk and honey.</code></pre>
 <p>Your file in sublime should look like this:</p>
 <p><img src="./img/16.png" alt=""></p>
 </li>
-      
-        <li> <h1>Web Browser</h1>
+        
+          <li> <h1>Web Browser</h1>
 <p>For this module we will be using Google&#39;s Chrome as our chosen Web Browser, it should be on all pc&#39;s in the IT building and if you are using your laptop you can download it here</p>
 <ul>
 <li><a href="http://www.google.com/chrome/">http://www.google.com/chrome/</a></li>
@@ -421,8 +426,8 @@ Next a paragraph could be A smooth, mild blend of coffees from Mexico, Bolivia a
 <p>It is nice to be able to see you html code in sublime and see the web browser window at the same time. You can do this by spliting your screen. In Windows while you have the sublime window open press the Windows button and the left hand arrow button on the keyboard. This will move the sublime window to the left hand side of your screen. Now go to the Chrome page and press the Windows button and the right hand arrow button on the keyboard. This will put the Chrome window to the right half of your screen. Something like this:</p>
 <p><img src="./img/22.png" alt=""></p>
 </li>
-      
-        <li> <h1>More HTML</h1>
+        
+          <li> <h1>More HTML</h1>
 <p>You now have an HTML file with markup - does that make a web page? Almost. 
 You will be introduced to the following tags in the lectures
 <code>&lt;html</code>&gt; <code>&lt;head</code>&gt; <code>&lt;title</code>&gt;  and <code>&lt;body</code>&gt;</p>
@@ -438,8 +443,8 @@ You will be introduced to the following tags in the lectures
 <p>You can see the title of the tab in Chrome now says Starbuzz Coffee</p>
 <p>Congratulations you have now completed your first web page. </p>
 </li>
-      
-        <li> <h1>Queries and Questions</h1>
+        
+          <li> <h1>Queries and Questions</h1>
 <p>There is a lot to take in and become familiar with while learning web development. You will always have questions, please do ask your tutor, there is never a stupid question. </p>
 <p>For additional support you can use the Internet although there are so many sites the ones we recommend are:</p>
 <ul>
@@ -484,7 +489,26 @@ Ebook ISBN:978-1-4493-2448-3 | ISBN 10:1-4493-2448-7</p>
 </ul>
 <p>Look up these in the reference, and try them out on the page you have designed.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

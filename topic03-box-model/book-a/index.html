@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,51 +294,53 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">3: The Box Model </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>3: The Box Model </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-3a Layout</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-3a Layout</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>CSS Design</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>CSS Design</h1>
 <p>fonts · content · images · classes · folding editor · sidebar · float</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>This week we wil start a new project, but we will NOT copy over any material from last week - but rather start with a blank slate.</p>
 <p>Open Sublime text editor - and open the <code>directory</code> containing your web development projects (this folder is called <code>web-prj</code> below):</p>
 <p><img src="img/00.png" alt=""></p>
@@ -378,8 +383,8 @@ Lab-12c Git Usage
 <p><img src="img/06.png" alt=""></p>
 <p>These are available via the <code>Preferences</code> menu.</p>
 </li>
-      
-        <li> <h1>Main page</h1>
+        
+          <li> <h1>Main page</h1>
 <h2>lab03/index.html</h2>
 <p>Open the main index.html page and replace the template contents with the following:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -482,8 +487,8 @@ Lab-12c Git Usage
 <p><img src="img/10.png" alt=""></p>
 <p>Explore the developer tools for a little while - notice how the <code>box model</code> seems to be visible. Then close it, we will return to it later.</p>
 </li>
-      
-        <li> <h1>Style Sheet</h1>
+        
+          <li> <h1>Style Sheet</h1>
 <p>Our first step will be to include a style sheet. Create a file called &#39;store.css&#39; and include the following:</p>
 <pre><code>body {
   font: small/1.6em Verdana, Helvetica, Arial, sans-serif;
@@ -510,8 +515,8 @@ h2 {
 <p><img src="img/12.png" alt=""></p>
 <p>Note carefully how the link slightly different to the previous one. Why is that?</p>
 </li>
-      
-        <li> <h1>Additional Content</h1>
+        
+          <li> <h1>Additional Content</h1>
 <p>Here is some additional content for the main index.page:</p>
 <pre><code>    &lt;h2&gt;Weekly Specials&lt;/h2&gt;
     &lt;hr&gt;
@@ -601,8 +606,8 @@ h2 {
 </ul>
 <p>(the link to &#39;deals&#39; is at the very end of the main page)</p>
 </li>
-      
-        <li> <h1>Guarantee Paragraph</h1>
+        
+          <li> <h1>Guarantee Paragraph</h1>
 <p>Locate the &#39;guarantee&#39; paragraph in the home page (the third paragraph):</p>
 <pre><code class="lang-html">    &lt;p&gt;
       Our guarantee: at the store, we&#39;re committed to 
@@ -712,8 +717,8 @@ h2 {
   color: black;
 }</code></pre>
 </li>
-      
-        <li> <h1>Folding View in Sublime</h1>
+        
+          <li> <h1>Folding View in Sublime</h1>
 <p>Your editor may look like this currently:</p>
 <p><img src="img/23.png" alt=""></p>
 <p>Now select the following menu option - <code>Edit-&gt;Code Folding-&gt;Fold All</code>:</p>
@@ -727,8 +732,8 @@ h2 {
 <img src="img/28.png" alt=""></p>
 <p>This can be challenging to effect - as the arrow will only appear when you hover in the correct column in the margin:</p>
 </li>
-      
-        <li> <h1>Sidebar</h1>
+        
+          <li> <h1>Sidebar</h1>
 <p>Open the main index.html and locate the <code>Weekly Specials</code> heading. Place a new <code>&lt;div&gt;</code> element immediately before this element:</p>
 <pre><code>    &lt;div id=&quot;weeklyspecials&quot;&gt;
     &lt;h2&gt;Weekly Specials&lt;/h2&gt;</code></pre>
@@ -948,8 +953,8 @@ h2 {
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 </li>
-      
-        <li> <h1>Floating Sections</h1>
+        
+          <li> <h1>Floating Sections</h1>
 <p>The <code>&lt;div&gt;s</code> we have introduced have had no effect on the visual appearance of the main page - it should still look exactly as it did before we incorporated them:</p>
 <p>We can now target this division directly with the following new rules in CSS:</p>
 <pre><code class="lang-css">#weeklyspecials {
@@ -1029,8 +1034,8 @@ h2 {
   width:70%;
 }</code></pre>
 </li>
-      
-        <li> <h1>Exercise</h1>
+        
+          <li> <h1>Exercise</h1>
 <p>This is the final version of the project:</p>
 <ul>
 <li><a href="archives/lab03.zip">lab03</a></li>
@@ -1062,7 +1067,26 @@ h2 {
 <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/border">https://developer.mozilla.org/en/docs/Web/CSS/border</a></li>
 </ul>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

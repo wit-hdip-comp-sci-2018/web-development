@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,47 +294,49 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">5: HTML Templates & Deployment </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>5: HTML Templates & Deployment </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-5a Harp & Surge</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-5a Harp & Surge</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Install software tools to serve a web site locally and also to deploy the web site to a public web server.</p>
 </li>
-      
-        <li> <h1>Explorer &amp; Command Prompt (Windows)</h1>
+        
+          <li> <h1>Explorer &amp; Command Prompt (Windows)</h1>
 <h2>Explorer</h2>
 <p>You may be alrady familiar with the windows Explorer application:</p>
 <p><img src="img/06.png" alt=""></p>
@@ -360,8 +365,8 @@ Lab-12c Git Usage
 <li><a href="https://www.iterm2.com">https://www.iterm2.com</a></li>
 </ul>
 </li>
-      
-        <li> <h1>Command Line (Windows)</h1>
+        
+          <li> <h1>Command Line (Windows)</h1>
 <p>This is an alternative interface to Windows which it is important to become familiar with. In this window you can type what are sometimes called &#39;DOS&#39; commands. These commands let you have a finer level of control of your PC, and are particularly important for programmers to master.</p>
 <p>Here are some simple commands:</p>
 <ul>
@@ -418,8 +423,8 @@ Lab-12c Git Usage
 <li><a href="https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/">https://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/</a></li>
 </ul>
 </li>
-      
-        <li> <h1>Installing Node.js, Harp.js and Surge</h1>
+        
+          <li> <h1>Installing Node.js, Harp.js and Surge</h1>
 <h2>Installing Node (Windows)</h2>
 <p>We will now install a set of tools to enable us to work with templates in html.</p>
 <p>First, install an application called node.js on your workstation:</p>
@@ -468,8 +473,8 @@ Lab-12c Git Usage
 </ul>
 <p>We will use both of these in the remaing steps.</p>
 </li>
-      
-        <li> <h1>Using Harp</h1>
+        
+          <li> <h1>Using Harp</h1>
 <p>Before entering the next few commands, make sure you know EXACTLY where your command prompt session is located in the folder structure. Perhaps you may be somewhere like:</p>
 <ul>
 <li><code>C:\course-work\web-development\lab05a</code></li>
@@ -504,8 +509,8 @@ Press Ctl+C to stop the server
 ------------
 ^C</code></pre>
 </li>
-      
-        <li> <h1>Deploying a Web Site using Surge</h1>
+        
+          <li> <h1>Deploying a Web Site using Surge</h1>
 <p>Create a new project from the command line by entering the following:</p>
 <pre><code>C:\course-work\web-development\lab05a&gt; harp init iot-web</code></pre>
 <p>In the above note that we are entering the command from the <code>C:\course-work\web-development\lab05a&gt;</code> folder. On mac this will be slightly different.</p>
@@ -563,8 +568,8 @@ C:\iot-web&gt; surge ./www
 <p>The <code>domain</code> can be customised -in the above example &#39;dull-pet&#39; was generated, you can replace this with something more suitable (but unique, so perhaps include your initials, the current date or something that may not be used by someone else).</p>
 <p>Open a browser to inspect the running site. This is now deployed and accessible globally!</p>
 </li>
-      
-        <li> <h1>Removing Web Sites from Surge</h1>
+        
+          <li> <h1>Removing Web Sites from Surge</h1>
 <p>If you have published a number of sites you may want to recall what domains were generated, or perhaps remove some or all of the published pages.</p>
 <p>The various commands are listed here:</p>
 <ul>
@@ -592,8 +597,8 @@ C:\dev\iot-web&gt;</code></pre>
 
 C:\dev\iot-web&gt;</code></pre>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>See if you can deploy one of your lab projects using surge. Here are the steps:</p>
 <h1>1: Verify harp &amp; surge installed</h1>
 <p>Make sure you have the node+harp+surge packages installed on your computer. Open a command prompt and enter</p>
@@ -642,7 +647,26 @@ harp -V</code></pre>
 <pre><code>  &lt;a href=&quot;/stuff/mypage.html&quot;&gt; my stuff &lt;/a&gt;</code></pre>
 <p>Try this now - one link at a time to make sure it works.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

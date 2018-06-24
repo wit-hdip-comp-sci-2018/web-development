@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">8: Models & Views </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>8: Models & Views </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-08a Playlist-2</a></li>
+            
+              <li><a href="#">Exercise Solutions</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-08a Playlist-2</a></li>
-          
-            <li><a href="#">Exercise Solutions</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Move the playlist model into the database. Prime the database from a YAML file.</p>
 </li>
-      
-        <li> <h1>Exercise Solutions</h1>
+        
+          <li> <h1>Exercise Solutions</h1>
 <h2>Exercise 3: Add a new playlist</h2>
 <p>Extend your version of the app to contain a new playlist - make up some songs. Verify that they are rendered as expected.</p>
 <h2>Solution</h2>
@@ -475,8 +480,8 @@ public class Playlist
   &lt;/p&gt;
 &lt;/section&gt;</code></pre>
 </li>
-      
-        <li> <h1>Yaml</h1>
+        
+          <li> <h1>Yaml</h1>
 <p>Create a new file in the <code>conf</code> folder called <code>data.yml</code>. Here are its contents:</p>
 <h2>conf/data.yml</h2>
 <pre><code>Song(s1):
@@ -524,8 +529,8 @@ Playlist(p2):
 </ul>
 <p>We will use this to describe initial values for our model objects.</p>
 </li>
-      
-        <li> <h1>Model</h1>
+        
+          <li> <h1>Model</h1>
 <p>Revise the Model classes, by changing the structure of both model classes:</p>
 <h2>app/models/Song.java</h2>
 <pre><code>package models;
@@ -608,8 +613,8 @@ public class Playlist extends Model
 ...</code></pre>
 <p>Make sure the app is running - you may need to restart to make sure...</p>
 </li>
-      
-        <li> <h1>Bootstrap</h1>
+        
+          <li> <h1>Bootstrap</h1>
 <p>Create a new class in the <code>app</code> package:</p>
 <pre><code>import java.util.List;
 
@@ -681,8 +686,8 @@ public class Dashboard extends Controller
   }
 }</code></pre>
 </li>
-      
-        <li> <h1>Database</h1>
+        
+          <li> <h1>Database</h1>
 <p>With your application still running - visit the following url:</p>
 <ul>
 <li><code>http://localhost:9000/@db</code></li>
@@ -702,8 +707,8 @@ public class Dashboard extends Controller
 <img src="img/08.png" alt=""></p>
 <p>Can you make sense of these tables - and relate them to the Java model classes? In particular, can you see the role of the playlist_song table? Inspect the contents closely, paying attention to the IDs.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1: Download and Rename Sample Solution</h2>
 <p>A complete version of the app as it should be at the end of this lab:</p>
 <ul>
@@ -788,7 +793,26 @@ public class Admin extends Controller
   render(&quot;admin.html&quot;, songs);
 ...</code></pre>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,51 +294,53 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">2: Introducing CSS </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>2: Introducing CSS </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-2 CSS Intro</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-2 CSS Intro</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>inheritance · classes · fonts · colours · indentation · best practices </p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>For some of the labs, we would like to build on a foundation established from the previous weeks work. However, we might find it useful to keep the project separate, so the earlier labs are preserved as we left them (in case we wish to revert to them). Normally this would be the task of a revision control system such as git or subversion. For the moment we will just duplicate the projects</p>
 <p>You should have the files created from last week. If you do then make a copy of the Lab1 folder and name the new copy Lab2.</p>
 <p>However, if you did not save the files or missed the class, here is the archive here of the completed lab (with exercises):</p>
@@ -392,8 +397,8 @@ If we are viewing the deals web page stored in the deals folder, does that folde
 &lt;/html&gt;</code></pre>
 <p>On the index.html page add a link to the deals.html page. Test the link to make sure you have written the path correctly.</p>
 </li>
-      
-        <li> <h1>CSS Inheritance</h1>
+        
+          <li> <h1>CSS Inheritance</h1>
 <p>Currently our CSS file looks like this:</p>
 <pre><code class="lang-css">h1, h2
 {
@@ -436,8 +441,8 @@ h1
 }</code></pre>
 <p>Have a close look at the resulting page. What type of font is used by the headings? What type for the paragraphs? Can you explain the difference? Comment out the body font rule again (as we did above). What is the effect?</p>
 </li>
-      
-        <li> <h1>CSS Classes</h1>
+        
+          <li> <h1>CSS Classes</h1>
 <p>Open the deals.html file.</p>
 <p>How would we style each heading 2 separately so that each bundle has a different colour text? Styling the <code>&lt;h2&gt;</code> element means that all <code>&lt;h2&gt;</code> elements are styled in the same way. We can define a class of elements, and then apply styles to any element that belongs to that class.</p>
 <p>Go to the first h2 which holds the business bundle. This text we want to display as red. Add an attribute called class, with an id &quot;special&quot; to the <code>&lt;h2&gt;</code> element as below:</p>
@@ -496,8 +501,8 @@ p
   color: red;
 }</code></pre>
 </li>
-      
-        <li> <h1>Fonts</h1>
+        
+          <li> <h1>Fonts</h1>
 <h3>Font families</h3>
 <p>Each font family contains a set of fonts that share common characteristics. There are five font familys: sans-serif, serif, monospace, cursive, and fantasy. Each family includes a large set of fonts. Fonts are not consistently available from one computer to another. The available fonts depends on the operating system as well as the fonts and applications that a user has installed. Here&#39;s a an example of how to use font-family:</p>
 <pre><code class="lang-css">body
@@ -566,8 +571,8 @@ h2
 }</code></pre>
 <p>Experiment with changing the headings for the web site so that the bold is changed to normal weight. Add the rule to your CSS file and reload the web site. Once you have seen the difference in the headings, change it back to bold.</p>
 </li>
-      
-        <li> <h1>Colours</h1>
+        
+          <li> <h1>Colours</h1>
 <p>Web colours are specified in terms of how much red, green, and blue make up the colour. You specify the amount of each colour from 0 to 100% and then add them all together to arrive at a final colour.</p>
 <p>You can use the names of colours, but CSS defines the names of only 17 colours. That number limits the expressiveness of your pages. By specifying colours in red, green and blue, you can have access to sixteen million colours.</p>
 <h2>Specifying Colour using colour names</h2>
@@ -597,8 +602,8 @@ h2
 <p>Try out these colours on the web site. </p>
 <p>We would like to keep the silver colour for the background of this website.</p>
 </li>
-      
-        <li> <h1>Font &amp; Colour CSS</h1>
+        
+          <li> <h1>Font &amp; Colour CSS</h1>
 <p>In your current style.css, change your CSS file so it now contains the following:</p>
 <pre><code class="lang-css">body
 {
@@ -640,8 +645,8 @@ p
 <p>This property allows us to specify the line height between each line. Like other font-related properties, you can specify the height in pixels, or using an em or percentage value that&#39;s relative to the font size. Save your CSS file and reload your web pages to see the change.</p>
 <p>Try a few different line heights like 200%, .5em, and 20px to see the effect. Change the height back to 1.6em when you are finished.</p>
 </li>
-      
-        <li> <h1>More Content</h1>
+        
+          <li> <h1>More Content</h1>
 <p>We will rework the apps.html  page with some more content to illustrate some interesting CSS rules. Replace the first paragraph with the following content:</p>
 <pre><code class="lang-html">  &lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
@@ -679,8 +684,8 @@ p
 <p>If all this goes according to plan,  the app page should now look something like this:</p>
 <p><img src="./img/06.png" alt=""></p>
 </li>
-      
-        <li> <h1>Coding Best Practices</h1>
+        
+          <li> <h1>Coding Best Practices</h1>
 <p>We should carefully inspect our html and verify that we are laying it out correctly, and in particular that we are obeying consistent indentation rules in the structure of the html itself.</p>
 <p>Indentation is simply a consistent placement of spaces before each element, such that it flows in an ordered manner reflecting the opening/closing of tags. We prefer to use 2 spaces for each &#39;level&#39;.</p>
 <h3>Example Inconsistent indentation:</h3>
@@ -725,8 +730,8 @@ p
 <p>It is likely that your indentation will not look like the below, so take the opportunity now to line up all elements consistently. This can be tedious, and there are tools to do this automatically, but do it manually for the moment.</p>
 <p><img src="./img/12.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Solution</h2>
 <p>This is a solution to the lab:</p>
 <ul>
@@ -749,7 +754,26 @@ Apply what you have learnt to the directions page in your web site.</p>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a></li>
 </ul>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,51 +294,53 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">12: Deployment + Review </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>12: Deployment + Review </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-12c Git Usage</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-12c Git Usage</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Rebuild Todolist - this time committing to git version control as the app is composed using Sourcetree</p>
 </li>
-      
-        <li> <h1>todolist-versioned Project</h1>
+        
+          <li> <h1>todolist-versioned Project</h1>
 <p>We should have our project in Sourcetree from the last lab:</p>
 <p><img src="img/01.png" alt=""></p>
 <p>Notice we have &#39;uncommitted changes&#39; in the above - this is the modification we made to application.conf to rename the project. We will return to this in a moment.</p>
@@ -397,8 +402,8 @@ tmp
 <li>Check to see if they have arrived (sometimes).</li>
 </ul>
 </li>
-      
-        <li> <h1>Model</h1>
+        
+          <li> <h1>Model</h1>
 <p>We can bring in a Todo model now:</p>
 <h2>app/models/Todo.java</h2>
 <pre><code>package models;
@@ -428,8 +433,8 @@ public class Todo extends Model
 <img src="img/14.png" alt=""></p>
 <p>Note the message we entered on the commit - a short description of the change.</p>
 </li>
-      
-        <li> <h1>Dashboard Controller + View</h1>
+        
+          <li> <h1>Dashboard Controller + View</h1>
 <p>Here is a new version of the Dashboard controller + view:</p>
 <h2>app/controllers/Dashboard.java</h2>
 <pre><code>package controllers;
@@ -500,8 +505,8 @@ public class Dashboard extends Controller
 <img src="img/17.png" alt="">
 <img src="img/18.png" alt=""></p>
 </li>
-      
-        <li> <h1>Delete Todo Support</h1>
+        
+          <li> <h1>Delete Todo Support</h1>
 <p>Now we can introduce delete support</p>
 <h2>conf/routes</h2>
 <pre><code>GET     /dashboard/deletetodo/{id}              Dashboard.deleteTodo</code></pre>
@@ -526,8 +531,8 @@ public class Dashboard extends Controller
 <pre><code>introduced delete todo support</code></pre>
 <p><img src="img/19.png" alt=""></p>
 </li>
-      
-        <li> <h1>UX Modifications</h1>
+        
+          <li> <h1>UX Modifications</h1>
 <p>The app is still branded as &#39;Template 1&#39; - we can change this now:</p>
 <h2>app/views/tags/menu.html</h2>
 <pre><code>...
@@ -561,8 +566,8 @@ public class Dashboard extends Controller
 <p><img src="img/23.png" alt="">
 <img src="img/24.png" alt=""></p>
 </li>
-      
-        <li> <h1>Member Model</h1>
+        
+          <li> <h1>Member Model</h1>
 <p>Introducing accounts we need a new model:</p>
 <h2>app/models/Member.java</h2>
 <pre><code>package models;
@@ -654,8 +659,8 @@ public class Bootstrap extends Job
 }</code></pre>
 <p>Stage and commit these changes now with a suitable message.</p>
 </li>
-      
-        <li> <h1>Accounts Views</h1>
+        
+          <li> <h1>Accounts Views</h1>
 <p>We need a number of new views to support login/signup:</p>
 <h2>app/views/tags/welcomemenu.html</h2>
 <pre><code>&lt;nav class=&quot;ui menu&quot;&gt;
@@ -737,8 +742,8 @@ public class Bootstrap extends Job
 <p>(This  replaces the existing delete button).</p>
 <p>Stage and commit all of these changes now, with a suitable message.</p>
 </li>
-      
-        <li> <h1>Accounts Routes + Controllers</h1>
+        
+          <li> <h1>Accounts Routes + Controllers</h1>
 <p>To finish the upgrade to accounts - we need this revised routes file (replace the existing one):</p>
 <h2>conf/routes</h2>
 <pre><code># Routes
@@ -874,8 +879,8 @@ public class Dashboard extends Controller
 <p>Stage and commit all changes in this step - and tag this version &#39;V2&#39;.</p>
 <p><img src="img/25.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>Your repo should be structured something like this one now:</p>
 <ul>
 <li><a href="https://github.com/edeleastar/todolist-versioned">https://github.com/edeleastar/todolist-versioned</a></li>
@@ -899,7 +904,26 @@ public class Dashboard extends Controller
 <p>Stage, commit and push these changes from the new copy.</p>
 <p>Back in the original, pull the changes into this version. Make sure the changes have come over.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,49 +294,51 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">11: Sessions & Models </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>11: Sessions & Models </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-11b Playlist 5</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-11b Playlist 5</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Incorporate Sessions into the latest Playlist Application</p>
 </li>
-      
-        <li> <h1>Accounts + Members</h1>
+        
+          <li> <h1>Accounts + Members</h1>
 <p>The Todolist application evolved <code>Member</code> model + an  <code>Accounts</code> controller that we used to manage signup/login features. These are the classes here:</p>
 <h2>Accounts</h2>
 <pre><code>package controllers;
@@ -443,8 +448,8 @@ public class Member extends Model
 <p>The project should now be without errors:</p>
 <p><img src="img/06.png" alt=""></p>
 </li>
-      
-        <li> <h1>Signup &amp; Login Forms + welcome Memu</h1>
+        
+          <li> <h1>Signup &amp; Login Forms + welcome Memu</h1>
 <p>Todolist also has signup and login views - which implement simple forms for this purpose:</p>
 <h2>views/signup.html</h2>
 <pre><code>#{extends &#39;main.html&#39; /}
@@ -550,8 +555,8 @@ public class Member extends Model
 <p>The view folder of the project should now look like this:</p>
 <p><img src="img/07.png" alt=""></p>
 </li>
-      
-        <li> <h1>Routes</h1>
+        
+          <li> <h1>Routes</h1>
 <p>These forms require these additional routes:</p>
 <h2>conf/routes</h2>
 <pre><code>GET    /signup                                  Accounts.signup
@@ -573,8 +578,8 @@ GET    /logout                                  Accounts.logout
 <p>Do you notice the slightly odd behaviour? We seem to have a single playlist - regardless of who is logged in.</p>
 <p>Clearly this is not what we intended - each user should have their own playlist, separate from other users. We will tackle this in the next step.</p>
 </li>
-      
-        <li> <h1>Sessions - Dashboard</h1>
+        
+          <li> <h1>Sessions - Dashboard</h1>
 <p>This is the current version of the Dashboard controller:</p>
 <pre><code>package controllers;
 
@@ -665,8 +670,8 @@ public class Dashboard extends Controller
 </ul>
 <p>Run the application now again, and verify that you can create and delete playlists. Keep a note of the names of the playlists you create for a given user - and switch users a few times. Verify that you are only manipulating the playlists for the logged in user.</p>
 </li>
-      
-        <li> <h1>Sessions - PlaylistCtrl</h1>
+        
+          <li> <h1>Sessions - PlaylistCtrl</h1>
 <p> This is the current version of PlaylistCtrl</p>
 <h2>PlaylistCtrl</h2>
 <pre><code>public class PlaylistCtrl extends Controller
@@ -706,8 +711,8 @@ public class Dashboard extends Controller
 <li>(3) If (2) is possible, how could we prevent this happening?</li>
 </ul>
 </li>
-      
-        <li> <h1>Model Seeding I</h1>
+        
+          <li> <h1>Model Seeding I</h1>
 <p>This is our current <code>data.yml</code> file:</p>
 <pre><code>Song(s1):
   title: Piano Sonata No. 3
@@ -776,8 +781,8 @@ Member(m2):
   password: secret</code></pre>
 <p>Restart the app - and verify that you can log in these users without signing up.</p>
 </li>
-      
-        <li> <h1>Model Seeding II</h1>
+        
+          <li> <h1>Model Seeding II</h1>
 <p>Revise the homer entry in the yml file:</p>
 <pre><code>Member(m1):
   firstname: homer
@@ -789,8 +794,8 @@ Member(m2):
   - p2</code></pre>
 <p>Restart the app - and verify that when you log in homer has the contents of playlists p1 and p2</p>
 </li>
-      
-        <li> <h1>Solution</h1>
+        
+          <li> <h1>Solution</h1>
 <p>Archive of the project so far:</p>
 <ul>
 <li><a href="https://github.com/edeleastar/playlist/releases/tag/playlist.5.end">https://github.com/edeleastar/playlist/releases/tag/playlist.5.end</a></li>
@@ -805,7 +810,26 @@ Member(m2):
 <p>Notice there seems to be a missing image on the right. Try to ensure that some stock image appears here.</p>
 <p>HINTL: Review Todolist 2, which has a solution to this issue.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

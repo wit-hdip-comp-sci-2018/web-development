@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">5: HTML Templates & Deployment </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>5: HTML Templates & Deployment </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-5c Templating & Nav</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-5c Templating & Nav</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Rework the tabbed navigation site from lab 04 to use EJS template</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>This is a complete archive a simple navigable web site form lab 04 (slightly simplified).</p>
 <ul>
 <li><a href="./archives/navdemo.zip">navdemo.zip</a></li>
@@ -347,8 +352,8 @@ Press Ctl+C to stop the server
 <p>Browse to <a href="http://localhost:9000/">http://localhost:9000/</a> ... the site should be available.</p>
 <p>Because we are running the site under an EJS server, we can start to use EJS features. </p>
 </li>
-      
-        <li> <h1>Layout</h1>
+        
+          <li> <h1>Layout</h1>
 <p>Introduce the following file into the project:</p>
 <h2>_layout.ejs</h2>
 <pre><code>&lt;html&gt;
@@ -563,8 +568,8 @@ Press Ctl+C to stop the server
 &lt;/footer&gt;</code></pre>
 <p>We have also replaced <code>&lt;div&gt;</code>s with approproate semantic elements. Browse to <a href="http://localhost:9000/">http://localhost:9000/</a> to make sure it is serving correctly.</p>
 </li>
-      
-        <li> <h1>Footer</h1>
+        
+          <li> <h1>Footer</h1>
 <p>Create a new folder in the project called <code>includes</code> and introduce the following:</p>
 <h2>includes/footer.ejs</h2>
 <pre><code>&lt;footer id=&quot;footer&quot;&gt;
@@ -578,8 +583,8 @@ Press Ctl+C to stop the server
 &lt;%- partial(&quot;includes/_footer.ejs&quot;) %&gt;</code></pre>
 <p>Browse to <a href="http://localhost:9000/">http://localhost:9000/</a> to make sure it is serving correctly.</p>
 </li>
-      
-        <li> <h1>Navigation</h1>
+        
+          <li> <h1>Navigation</h1>
 <p>We can now try the same with the navigation section:</p>
 <h2>includes/nav.ejs</h2>
 <pre><code>&lt;nav id=&quot;navigation&quot;&gt;
@@ -601,8 +606,8 @@ Press Ctl+C to stop the server
 ...</code></pre>
 <p>One solution would be to reverse the last change - and keep the <code>&lt;nav&gt;</code> section individual to each page. An alternative is implemented in the next step....</p>
 </li>
-      
-        <li> <h1>Dynamic Navigation</h1>
+        
+          <li> <h1>Dynamic Navigation</h1>
 <p>Edit _layout.ejs, introducing a new element in the <code>&lt;head&gt;</code> section:</p>
 <pre><code>    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>This is the complete version:</p>
@@ -651,8 +656,8 @@ Press Ctl+C to stop the server
 ...</code></pre>
 <p>Browse to <a href="http://localhost:9000/">http://localhost:9000/</a> to make sure it is serving correctly.</p>
 </li>
-      
-        <li> <h1>Solution</h1>
+        
+          <li> <h1>Solution</h1>
 <p>This is a complete archive of the site created in this lab:</p>
 <ul>
 <li><a href="./archives/navdemo-final.zip">navdemofinal.zip</a></li>
@@ -667,7 +672,26 @@ Press Ctl+C to stop the server
 <li><a href="https://loremipsumgenerator.com">https://loremipsumgenerator.com</a></li>
 </ul>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

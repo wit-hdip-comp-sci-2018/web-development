@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,47 +294,49 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">5: HTML Templates & Deployment </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>5: HTML Templates & Deployment </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-5b Templating</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-5b Templating</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Rebuild the IoT web site from thee last lab using templating. This version of the site will aim to significantly reduce the content the author has to manage by reusing &#39;templates&#39; containing common sections.</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>Continue on with the project form the last lab, or download this archive if you want to start from scratch:</p>
 <ul>
 <li><a href="https://github.com/wit-ictskills-2016/iot-web/tree/V08">https://github.com/wit-ictskills-2016/iot-web/tree/V08</a></li>
@@ -372,8 +377,8 @@ Press Ctl+C to stop the server</code></pre>
 <p>Also, open <code>index.html</code> in your browser by locating the file on disk - as you will be used to doing in the labs so far.</p>
 <p>The site will render more or less exactly the same using both techniques. Verify this now - and note carefully the slight differences in the URL in the address bar in both cases.</p>
 </li>
-      
-        <li> <h1>Includes</h1>
+        
+          <li> <h1>Includes</h1>
 <p>Create a new folder in your project called <code>includes</code> and create the following files:</p>
 <h2>_header.ejs</h2>
 <pre><code>&lt;header id=&quot;header&quot;&gt;
@@ -433,8 +438,8 @@ Press Ctl+C to stop the server</code></pre>
 <p><img src="img/01.png" alt=""></p>
 <p>From now on, we can only view the pages via the &#39;harp server&#39; command - and the pages will be in fragments that this program assembles for us.</p>
 </li>
-      
-        <li> <h1>Data Strands</h1>
+        
+          <li> <h1>Data Strands</h1>
 <p>Locate the file <code>strands/data.html</code> and rename it to <code>strands/data.ejs</code></p>
 <p>Open this page in sublime - and delete the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements - replacing them with the <code>partial</code>s we already include in <code>index.ejs</code>:</p>
 <pre><code>...
@@ -456,8 +461,8 @@ Press Ctl+C to stop the server</code></pre>
 <p>(we have just placed a <code>/</code> in front of the assets path name)</p>
 <p>Check now that the crest appears correctly.</p>
 </li>
-      
-        <li> <h1>All Strands</h1>
+        
+          <li> <h1>All Strands</h1>
 <p>We can now proceed to rename all of the strand pages from <code>.html</code> to <code>.ejs</code>. </p>
 <p>Your project should be structured like this now:</p>
 <pre><code>├── harp.json
@@ -522,8 +527,8 @@ Press Ctl+C to stop the server</code></pre>
 <li><a href="https://github.com/wit-ictskills-2016/iot-web/tree/V10">https://github.com/wit-ictskills-2016/iot-web/tree/V10</a></li>
 </ul>
 </li>
-      
-        <li> <h1>Index Templates</h1>
+        
+          <li> <h1>Index Templates</h1>
 <p>In the includes folder, create these new files:</p>
 <h2>_summary.ejs</h2>
 <pre><code>&lt;article class=&quot;banner&quot;&gt;
@@ -635,8 +640,8 @@ Press Ctl+C to stop the server</code></pre>
 <li><a href="https://github.com/wit-ictskills-2016/iot-web/tree/V11">https://github.com/wit-ictskills-2016/iot-web/tree/V11</a></li>
 </ul>
 </li>
-      
-        <li> <h1>Layout</h1>
+        
+          <li> <h1>Layout</h1>
 <p>This final step is a little more ambitious - involving the use of a <code>layout</code>. This is a reusable structure for an entire page, and can simplify and centralize the simplify the management and organisation of large sites. We will apply a layout to just the <code>strand</code> pages.</p>
 <p>First, create a new file in the <code>strands</code> folder:</p>
 <h2>_layout.ejs</h2>
@@ -706,8 +711,8 @@ Press Ctl+C to stop the server</code></pre>
     │   └── project.ejs
     └── style.css</code></pre>
 </li>
-      
-        <li> <h1>Exercise</h1>
+        
+          <li> <h1>Exercise</h1>
 <h2>Archive</h2>
 <p>This is an archive of the project at this stage:</p>
 <ul>
@@ -755,7 +760,26 @@ Press Ctl+C to stop the server</code></pre>
     └── style.css</code></pre>
 <p>Notice that the www folder no longer has the includes folder and its contents - and all of the files are back to being <code>.html</code> instead of <code>.ejs</code>. This is the &#39;compiled&#39; version of the web site - and is ready for deployment. </p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

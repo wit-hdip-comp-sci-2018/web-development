@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,49 +294,51 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">8: Models & Views </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>8: Models & Views </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-08b Playlist-3</a></li>
+            
+              <li><a href="#">Exercise Solutions</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-08b Playlist-3</a></li>
-          
-            <li><a href="#">Exercise Solutions</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Move the playlists into their own view. Introduce routes for opening the playlist and also deleting individual songs.</p>
 </li>
-      
-        <li> <h1>Exercise Solutions</h1>
+        
+          <li> <h1>Exercise Solutions</h1>
 <h2>Exercise 2: New Playlist</h2>
 <p>Working only in the data.yml, create a new Playlist. If this works correctly, you should see the playlist in the dashboard just by restarting the application.</p>
 <h2>Solution</h2>
@@ -453,8 +458,8 @@ public class Admin extends Controller
   }
 }</code></pre>
 </li>
-      
-        <li> <h1>Playlist Summary</h1>
+        
+          <li> <h1>Playlist Summary</h1>
 <p>We would like to change the app to just display a list of playlists on the dashboard, not the complete contents of each playlist. Replace the current dashboard with the following:</p>
 <h2>views/dashboard.html</h2>
 <pre><code class="lang-html">#{extends &#39;main.html&#39; /}
@@ -483,8 +488,8 @@ public class Admin extends Controller
 <p><img src="img/03.png" alt=""></p>
 <p>We need a new controller to display a new view containing the playlist details. We will do this in the next step.</p>
 </li>
-      
-        <li> <h1>Router + Controller</h1>
+        
+          <li> <h1>Router + Controller</h1>
 <p>The starting point for any new link in our app is to first define a <code>route</code> to support this link. All supported routes are defined in <code>config/conf</code></p>
 <h2>config/conf</h2>
 <pre><code># Routes
@@ -530,8 +535,8 @@ GET     /admin                                  Admin.index</code></pre>
 }</code></pre>
 <p>Make sure you understand this connection before proceeding.</p>
 </li>
-      
-        <li> <h1>Controller/View/Route</h1>
+        
+          <li> <h1>Controller/View/Route</h1>
 <p>We have a new pattern <code>/playlist/id</code>, which we would like to route to a controller that would render a new view detailing the playlist contents:</p>
 <h2>views/dashboard.html</h2>
 <pre><code class="lang-html">...
@@ -578,8 +583,8 @@ public class PlaylistCtrl extends Controller
 <p>Notice that the route includes this segment: <code>{id}</code>. This means it matches any route that includes an extra wildcard segment at the end.</p>
 <p>Implement all of the above now and verify that the view is rendered as expected.</p>
 </li>
-      
-        <li> <h1>Playlists</h1>
+        
+          <li> <h1>Playlists</h1>
 <p>In order to display the correct playlist, we need to extract the id from the url and then fetch the playlist from the model. Modify the playlist controller as follows:</p>
 <pre><code class="lang-js">...
 
@@ -598,7 +603,7 @@ public class PlaylistCtrl extends Controller
 <p>Run the app and select each of the playlist links in turn. The logs will display each of the Ids in turn. A different id should be logged.</p>
 <p>Check the database to verify that these IDs are correct:</p>
 <ul>
-<li><a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#104;&#x74;&#116;&#x70;&#58;&#x2f;&#47;&#108;&#x6f;&#x63;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#58;&#57;&#x30;&#x30;&#48;&#x2f;&#64;&#x64;&#98;">&#104;&#x74;&#116;&#x70;&#58;&#x2f;&#47;&#108;&#x6f;&#x63;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#58;&#57;&#x30;&#x30;&#48;&#x2f;&#64;&#x64;&#98;</a></li>
+<li><a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#104;&#116;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#111;&#99;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#64;&#100;&#x62;">&#104;&#116;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#111;&#99;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#64;&#100;&#x62;</a></li>
 </ul>
 <p>Occasionally, you may see an error like this:</p>
 <p><img src="img/04.png" alt=""></p>
@@ -677,8 +682,8 @@ public class PlaylistCtrl extends Controller
 &lt;/section&gt;</code></pre>
 <p>Verify that all of this works as expected.</p>
 </li>
-      
-        <li> <h1>Deleting Songs 1</h1>
+        
+          <li> <h1>Deleting Songs 1</h1>
 <p>Having a playlist app, without the ability to create/delete songs or playlists is clearly very limited. We have, essentially, an app that allows us to <code>Read</code> our models, but not <code>Create</code>, <code>Update</code> or <code>Delete</code> elements of the model.</p>
 <p>We can start with providing a facility to delete songs from individual playlists. Our view will need to look like this:</p>
 <p><img src="img/05.png" alt=""></p>
@@ -741,8 +746,8 @@ public class PlaylistCtrl extends Controller
 <p>Try all of this now - and verify that the logs shows the attempt to delete the song when the button is pressed.</p>
 <p>We havent yet deleted the song - we will leave that to the next step.</p>
 </li>
-      
-        <li> <h1>Delete Song 2</h1>
+        
+          <li> <h1>Delete Song 2</h1>
 <p>This is our deleteSong method:</p>
 <pre><code>  public static void deletesong (Long id, Long songid)
   {
@@ -775,8 +780,8 @@ public class PlaylistCtrl extends Controller
   }</code></pre>
 <p>Try this now - and make sure the songs are removed. Also, check that they are removed from the database table.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1: Download and Rename Sample Solution</h2>
 <p>A complete version of the app as it should be at the end of this lab:</p>
 <ul>
@@ -793,7 +798,26 @@ public class PlaylistCtrl extends Controller
 <h2>Exercise 3: Delete Playlist Functionality</h2>
 <p>Make the button actually delete the denoted playlist.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

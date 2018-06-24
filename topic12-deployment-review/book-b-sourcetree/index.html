@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,47 +294,49 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">12: Deployment + Review </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>12: Deployment + Review </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-12b Git Setup</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-12b Git Setup</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Install and Configure Git + the Sourcetree git GUI</p>
 </li>
-      
-        <li> <h1>Git,  Github &amp; Bitbucket</h1>
+        
+          <li> <h1>Git,  Github &amp; Bitbucket</h1>
 <p>Make sure git is installed for your workstation::</p>
 <ul>
 <li><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
@@ -353,8 +358,8 @@ Lab-12c Git Usage
 </ul>
 <p>Be sure to verify your email.</p>
 </li>
-      
-        <li> <h1>Install Sourcetree</h1>
+        
+          <li> <h1>Install Sourcetree</h1>
 <p>Visit:</p>
 <ul>
 <li><a href="https://www.sourcetreeapp.com/">https://www.sourcetreeapp.com/</a></li>
@@ -377,8 +382,8 @@ Lab-12c Git Usage
 <p><img src="img/10.png" alt=""></p>
 <p>This should show the both accounts linked as above. If not, you can press <code>add</code> and link them now (no need to reinstall).</p>
 </li>
-      
-        <li> <h1>Create new Repo on Github</h1>
+        
+          <li> <h1>Create new Repo on Github</h1>
 <p>Back on :</p>
 <ul>
 <li><a href="https://github.com">https://github.com</a></li>
@@ -389,8 +394,8 @@ Lab-12c Git Usage
 <p><img src="img/18.png" alt=""></p>
 <p>Note carefully the url of the repo - in the box above. Copy this to the clipboard now.</p>
 </li>
-      
-        <li> <h1>Create New Application</h1>
+        
+          <li> <h1>Create New Application</h1>
 <p>We now would like to start a new play application, which we will tie to a github repo.</p>
 <p>First, create a new app by cloning a starter app:</p>
 <h2>Create New Project</h2>
@@ -424,8 +429,8 @@ Unpacking objects: 100% (66/66), done.</code></pre>
 <li><a href="http://localhost:9000">http://localhost:9000</a></li>
 </ul>
 </li>
-      
-        <li> <h1>Set Remote Repo</h1>
+        
+          <li> <h1>Set Remote Repo</h1>
 <p>Your Sourcetree app currently looks like this:</p>
 <p><img src="img/11.png" alt=""></p>
 <p>Locate the <code>todolist-versioned</code> folder we just created, and drag and drop it onto SourceTree:</p>
@@ -437,8 +442,8 @@ Unpacking objects: 100% (66/66), done.</code></pre>
 <p>Select <code>Edit</code> - and change URL / Path to the url you should have in the clipboard from step 3:</p>
 <p><img src="img/20.png" alt=""></p>
 </li>
-      
-        <li> <h1>Push</h1>
+        
+          <li> <h1>Push</h1>
 <p>Press the <code>Push</code> button:</p>
 <p>This will bring up this screen:</p>
 <p><img src="img/20.png" alt=""></p>
@@ -448,8 +453,8 @@ Unpacking objects: 100% (66/66), done.</code></pre>
 <p>Explore the various view - including the <code>commits</code> screen:</p>
 <p><img src="img/22.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>To get fluent with this procedure, try the following:</p>
 <h2>Exercise 1: Github Practice</h2>
 <p>Create another new app - called <code>demo-1</code> - using the procedure  specified on Step 04.</p>
@@ -459,7 +464,26 @@ Unpacking objects: 100% (66/66), done.</code></pre>
 Create (another!) new project <code>demo-2</code> - this time see if you can figure out how put it on bitbucket.</p>
 <p>The main difference between github and bitbucket is that github repos are always public, whereas bitbucket can be either (default private).</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

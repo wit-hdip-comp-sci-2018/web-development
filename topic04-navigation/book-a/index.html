@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">4: Navigation, Semantics & Style Guides </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>4: Navigation, Semantics & Style Guides </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-4a Navigation </a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-4a Navigation </a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>nav · tab · current · padding · border · menu · li · ul</p>
 </li>
-      
-        <li> <h1>Setup</h1>
+        
+          <li> <h1>Setup</h1>
 <p>For this lab, start with the this project here:</p>
 <ul>
 <li><a href="./archives/lab04a-starter.zip">lab04a</a></li>
@@ -345,8 +350,8 @@ Lab-12c Git Usage
 <p>Download and expand the zip file above, or alternatively in your browser, you can select &#39;save link as&#39; or equivalent and save these into your own workstation. To do this you will first have to locate the actual folder in which the lab05 project is stored, save the four files into that folder.</p>
 <p>Either way, we wish to use the above as the basis for this lab.</p>
 </li>
-      
-        <li> <h1>Navigation</h1>
+        
+          <li> <h1>Navigation</h1>
 <p>On a web page the navigation can be thought of as the table of contents. You expect the table of contents to direct you to the content you want to access.</p>
 <p>In this lab we will create a tabbed navigation section that will look like this:</p>
 <p><img src="./img/08.png" alt=""></p>
@@ -381,8 +386,8 @@ Lab-12c Git Usage
 <p>We must also do this for page1, 2 and 3. So for page1.html add the class attribute &quot;current&quot; to the second list item (Cras). For page2.html add it to the third list item (Proin) and for page3.html add it to the fourth list item (Integer)</p>
 <p>When viewing out web pages this makes no visible difference as all we are doing is identifying those elements we will no go on to style in a particular way.</p>
 </li>
-      
-        <li> <h1>Forming the Tab</h1>
+        
+          <li> <h1>Forming the Tab</h1>
 <p>Make sure the &#39;navigation&#39; division is located towards the top of the page structure between the header and the maincontent. (If you copied the output of last weeks lab, it will be near the end) If we were to take a view of any of the pages using the folding feature if Sublime, we would like to see this:</p>
 <p><img src="./img/02.png" alt=""></p>
 <p>There are several methods for creating nice navigation on your site, the method we teach in this lab is a pure CSS method using different background colour for &#39;tabs&#39; on the navigation menu.</p>
@@ -426,8 +431,8 @@ Lab-12c Git Usage
 }</code></pre>
 <p><img src="img/x04.png" alt=""></p>
 </li>
-      
-        <li> <h1>Establishing the Tab Bar</h1>
+        
+          <li> <h1>Establishing the Tab Bar</h1>
 <p>Next add the following rule to the home.css file:</p>
 <pre><code>ul#menu {
   margin: 0;
@@ -453,8 +458,8 @@ Lab-12c Git Usage
 <p><img src="img/x07.png" alt=""></p>
 <p>This &#39;turns off&#39; the underlining of links, which will make our tabs look more distinctive.</p>
 </li>
-      
-        <li> <h1>Styling the Tab</h1>
+        
+          <li> <h1>Styling the Tab</h1>
 <p>Our page is navigable now, but the user has no real idea of what page they are visting. Then cannot even tell if the list long the top is in fact a navigation panel.</p>
 <p>We can do two things to fix this:</p>
 <h2>1: Border</h2>
@@ -543,8 +548,8 @@ ul#menu a {
   color: white;
 }</code></pre>
 </li>
-      
-        <li> <h2>Exercises</h2>
+        
+          <li> <h2>Exercises</h2>
 <h2>Completed Lab</h2>
 <p>This is a complete archive of this lab if you are having difficulty:</p>
 <ul>
@@ -572,7 +577,26 @@ ul#menu a {
 </ul>
 <p>Notice the different style applied to the tabs? See you can apply this style to the lab03a project.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

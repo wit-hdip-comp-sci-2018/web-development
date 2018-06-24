@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,47 +294,49 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">12: Deployment + Review </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>12: Deployment + Review </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-12a Deploy</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-12a Deploy</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Deploy a Play Application to the cloud</p>
 </li>
-      
-        <li> <h1>Setup.</h1>
+        
+          <li> <h1>Setup.</h1>
 <p>We need 2 free services to get our Play Application live in the Cloud. In this step we create the necessary accounts.</p>
 <ul>
 <li>Heroku</li>
@@ -363,8 +368,8 @@ Lab-12c Git Usage
 </ul>
 <p>When this is installed, a folder called <code>Dropbox</code> will be created on your workstation - which will also be mirrored in the cloud. Make sure you can locate this folder and that it is in fact synced with the cloud.</p>
 </li>
-      
-        <li> <h1>Preparing the Play Application for Deployment</h1>
+        
+          <li> <h1>Preparing the Play Application for Deployment</h1>
 <p>You may have your own version of the Todolist 2 application - which you can use for the rest of this lab. Alternatively, you can download the the version we left at the end of lab 10:</p>
 <ul>
 <li><a href="https://github.com/edeleastar/todolist/releases/tag/todolist-2.end">https://github.com/edeleastar/todolist/releases/tag/todolist-2.end</a></li>
@@ -410,8 +415,8 @@ jpa.dialect=org.hibernate.dialect.PostgreSQLDialect
 jpa.ddl=update</code></pre>
 <p>NB: This very last change will mean that YOUR APP WILL NO LONGER RUN LOCALLY! (apologies for the caps). So you will need to reverse the very last change if you want to run locally again.</p>
 </li>
-      
-        <li> <h1>Creating &amp; Configure the Application on Heroku</h1>
+        
+          <li> <h1>Creating &amp; Configure the Application on Heroku</h1>
 <p>Now we need to create and configure the application on Heroku:</p>
 <ul>
 <li>Create App</li>
@@ -453,8 +458,8 @@ jpa.ddl=update</code></pre>
 <p><img src="img/16.png" alt=""></p>
 <p>The build pack is needed to inform Heroku how a play app is configured and managed.</p>
 </li>
-      
-        <li> <h1>Deploy the Application</h1>
+        
+          <li> <h1>Deploy the Application</h1>
 <p>Back in the <code>Deploy</code> panel - we can now press the <code>Deploy</code> button.</p>
 <p>This will take a minute or so - and will log its progress...</p>
 <p>If all goes well -- it should look like this:</p>
@@ -467,8 +472,8 @@ jpa.ddl=update</code></pre>
 <p><img src="img/21.png" alt=""></p>
 <p>You should be able to ad and remove todos. Log out, sign up a new user etc...</p>
 </li>
-      
-        <li> <h2>Logs</h2>
+        
+          <li> <h2>Logs</h2>
 <p>Back in the Heroku Console - select <code>more</code> on the top right:</p>
 <p><img src="img/22.png" alt=""></p>
 <p>Select <code>View logs</code>. </p>
@@ -507,11 +512,11 @@ jpa.ddl=update</code></pre>
 <p><img src="img/26.png" alt=""></p>
 <p>These logs are separate from the run time logs described above. You will need to monitor these logs occasionally in case any errors arise.</p>
 </li>
-      
-        <li> <h1>Database Dashboard</h1>
+        
+          <li> <h1>Database Dashboard</h1>
 <p>If you have been relying on this link:</p>
 <ul>
-<li><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#104;&#x74;&#x74;&#112;&#x3a;&#x2f;&#x2f;&#108;&#x6f;&#99;&#x61;&#x74;&#x68;&#111;&#115;&#116;&#57;&#x30;&#48;&#x30;&#x2f;&#64;&#x64;&#98;">&#104;&#x74;&#x74;&#112;&#x3a;&#x2f;&#x2f;&#108;&#x6f;&#99;&#x61;&#x74;&#x68;&#111;&#115;&#116;&#57;&#x30;&#48;&#x30;&#x2f;&#64;&#x64;&#98;</a> </li>
+<li><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#x61;&#116;&#104;&#111;&#x73;&#116;&#57;&#48;&#48;&#x30;&#x2f;&#64;&#x64;&#x62;">&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#x61;&#116;&#104;&#111;&#x73;&#116;&#57;&#48;&#48;&#x30;&#x2f;&#64;&#x64;&#x62;</a> </li>
 </ul>
 <p>...to view the browser when running locally - this will NOT work for the deployed version. </p>
 <p>However, Heroku supports a free add-on which fulfils a similiar role:</p>
@@ -535,8 +540,8 @@ jpa.ddl=update</code></pre>
 <p><img src="img/32.png" alt=""></p>
 <p>There are additional Widgets you can experiment with here to monitor database activity over time.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1: Deploy Playlist 5</h2>
 <p>Deploy the latest playlist application:</p>
 <ul>
@@ -549,7 +554,26 @@ jpa.ddl=update</code></pre>
 <p>Here we are monitoring the deploy logs, the main application logs, the database console and the application itself (including the browser tools).</p>
 <p>Try some variation of this now and get familiar with the nature of the information in each of the windows. Proceed through a deploy cycle while doing this (make a cosmetic change to the app in dropbox to allow a deploy to be triggered)</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

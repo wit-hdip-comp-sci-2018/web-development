@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -291,45 +294,47 @@ Lab-12c Git Usage
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">9: Forms </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>9: Forms </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-09a Playlist-4</a></li>
+            
+              <li><a href="#">Exercise Solutions</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-09a Playlist-4</a></li>
-          
-            <li><a href="#">Exercise Solutions</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Introduce forms into a play application to enable the user to create playlists.</p>
 </li>
-      
-        <li> <h1>Exercise Solutions</h1>
+        
+          <li> <h1>Exercise Solutions</h1>
 <p>If you have completed the Playlist labs to date, then you can continue to work in the Playlist project you should have created.</p>
 <p>If you cannot locate this project, or it has become unusable - then you can start from the solution lab08b:</p>
 <ul>
@@ -381,8 +386,8 @@ Lab-12c Git Usage
 <p>Try this now - and make sure a playlist is being deleted.</p>
 <p>Also - check to see if the songs in the playlist are also deleted?</p>
 </li>
-      
-        <li> <h1>Add Song Form</h1>
+        
+          <li> <h1>Add Song Form</h1>
 <p>Introduce a new partial to provide a simple form to add songs to a playlist:</p>
 <h2>app/views/tags/addsong.html</h2>
 <pre><code>&lt;form class=&quot;ui stacked segment form&quot; action=&quot;/playlists/${_playlist.id}/addsong&quot; method=&quot;POST&quot;&gt;
@@ -420,8 +425,8 @@ Lab-12c Git Usage
 <p><img src="img/01.png" alt=""></p>
 <p>We have a new form and an <code>add song</code> button</p>
 </li>
-      
-        <li> <h1>Add Song Route + Action</h1>
+        
+          <li> <h1>Add Song Route + Action</h1>
 <p>To implement the feature - we need a new route:</p>
 <h2>conf/routes</h2>
 <pre><code>...
@@ -442,8 +447,8 @@ POST    /playlists/{id}/addsong                  PlaylistCtrl.addSong
 ...</code></pre>
 <p>Restart the app now - and verify that you can add songs. Check in the database to verify that the new songs appear in the table.</p>
 </li>
-      
-        <li> <h1>Add Playlist Form</h1>
+        
+          <li> <h1>Add Playlist Form</h1>
 <p>Create a new partial containig a form to support adding new playlists:</p>
 <h2>app/views/tags/addplaylist.html</h2>
 <pre><code>&lt;form class=&quot;ui stacked segment form&quot; action=&quot;/dashboard/addplaylist&quot; method=&quot;POST&quot;&gt;
@@ -461,8 +466,8 @@ POST    /playlists/{id}/addsong                  PlaylistCtrl.addSong
 <p>The dashboard should look like this now:</p>
 <p><img src="img/02.png" alt=""></p>
 </li>
-      
-        <li> <h1>Add Playlist Route + Action</h1>
+        
+          <li> <h1>Add Playlist Route + Action</h1>
 <p>To implement the feature - we need a new route:</p>
 <h2>conf/routes</h2>
 <pre><code>...
@@ -481,8 +486,8 @@ POST    /dasghboard/addplaylist                 Dashboard.addPlaylist
 ...</code></pre>
 <p>Restart the app now - and verify that you can add playlists. Check in the database to verify that the new playlists appear in the table. Also add some songs to the playlist.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1 : Download, Rename and Run the Sample Solution</h2>
 <p>Even if you have successfully completed this lab - do not skip this step, as it is important to be able to run the sample solutions occasionally, and also retain them for reference purposes.</p>
 <p>A complete version of the app as it should be at the end of this lab:</p>
@@ -491,7 +496,26 @@ POST    /dasghboard/addplaylist                 Dashboard.addPlaylist
 </ul>
 <p>Download, unzip,<code>idealize</code> the project. Then run it. You should be comfortable doing this now. </p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
