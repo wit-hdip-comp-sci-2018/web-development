@@ -38,6 +38,7 @@ pre code {
 
 img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
 }
 
 h1, h2, h3 {
@@ -603,7 +604,7 @@ public class PlaylistCtrl extends Controller
 <p>Run the app and select each of the playlist links in turn. The logs will display each of the Ids in turn. A different id should be logged.</p>
 <p>Check the database to verify that these IDs are correct:</p>
 <ul>
-<li><a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#104;&#116;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#111;&#99;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#64;&#100;&#x62;">&#104;&#116;&#x74;&#112;&#58;&#47;&#x2f;&#108;&#111;&#99;&#x61;&#108;&#104;&#111;&#x73;&#x74;&#x3a;&#57;&#x30;&#48;&#48;&#47;&#64;&#100;&#x62;</a></li>
+<li><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x68;&#116;&#116;&#x70;&#x3a;&#x2f;&#x2f;&#x6c;&#111;&#99;&#x61;&#108;&#104;&#111;&#115;&#x74;&#x3a;&#x39;&#x30;&#x30;&#48;&#x2f;&#x40;&#100;&#x62;">&#x68;&#116;&#116;&#x70;&#x3a;&#x2f;&#x2f;&#x6c;&#111;&#99;&#x61;&#108;&#104;&#111;&#115;&#x74;&#x3a;&#x39;&#x30;&#x30;&#48;&#x2f;&#x40;&#100;&#x62;</a></li>
 </ul>
 <p>Occasionally, you may see an error like this:</p>
 <p><img src="img/04.png" alt=""></p>
@@ -809,11 +810,10 @@ public class PlaylistCtrl extends Controller
     if ($images[i].alt.length > 0) {
       const divImg = $(document.createElement('div')).addClass('');
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-          'uk-label',
-      );
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
       divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
     }
   });
 });

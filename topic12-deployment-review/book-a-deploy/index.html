@@ -38,6 +38,7 @@ pre code {
 
 img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
 }
 
 h1, h2, h3 {
@@ -516,7 +517,7 @@ jpa.ddl=update</code></pre>
           <li> <h1>Database Dashboard</h1>
 <p>If you have been relying on this link:</p>
 <ul>
-<li><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#x61;&#116;&#104;&#111;&#x73;&#116;&#57;&#48;&#48;&#x30;&#x2f;&#64;&#x64;&#x62;">&#x68;&#116;&#116;&#112;&#x3a;&#47;&#x2f;&#x6c;&#x6f;&#99;&#x61;&#116;&#104;&#111;&#x73;&#116;&#57;&#48;&#48;&#x30;&#x2f;&#64;&#x64;&#x62;</a> </li>
+<li><a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#104;&#x74;&#x74;&#112;&#x3a;&#47;&#x2f;&#108;&#x6f;&#x63;&#x61;&#116;&#104;&#111;&#x73;&#116;&#x39;&#x30;&#x30;&#x30;&#47;&#x40;&#x64;&#98;">&#104;&#x74;&#x74;&#112;&#x3a;&#47;&#x2f;&#108;&#x6f;&#x63;&#x61;&#116;&#104;&#111;&#x73;&#116;&#x39;&#x30;&#x30;&#x30;&#47;&#x40;&#x64;&#98;</a> </li>
 </ul>
 <p>...to view the browser when running locally - this will NOT work for the deployed version. </p>
 <p>However, Heroku supports a free add-on which fulfils a similiar role:</p>
@@ -565,11 +566,10 @@ jpa.ddl=update</code></pre>
     if ($images[i].alt.length > 0) {
       const divImg = $(document.createElement('div')).addClass('');
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-          'uk-label',
-      );
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
       divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
     }
   });
 });
