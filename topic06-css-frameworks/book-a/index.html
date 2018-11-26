@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,206 +66,234 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 6: CSS Frameworks  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Lab-6a Semantic UI 1">
-        Lab-6a Semantic UI 1
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="09">
-        09
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 6: CSS Frameworks  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Lab-6a Semantic UI 1">
+          Lab-6a Semantic UI 1
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="09">
+          09
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-a/index.html">Lab-1.1: Editing HTML </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic01-introducing-html/book-b/index.html">Lab-1.2: HTML Structure </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic02-inctroducing-css/book/index.html">Lab-2 CSS Intro </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-a/index.html">Lab-4a Navigation  </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-a/index.html">Lab-3a Layout </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-b/index.html">Lab-4b Case Study </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-01-harp/index.html">Lab-5a Harp & Surge </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic03-box-model/book-b/index.html">Lab-3b Multicolumn </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-02-templates/index.html">Lab-5b Templating </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-03-nav-templates/index.html">Lab-5c Templating & Nav </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-a/index.html">Lab-4a Navigation  </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-a/index.html">Lab-6a Semantic UI 1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-b/index.html">Lab-6b Semantic UI 2 </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic04-navigation/book-b/index.html">Lab-4b Case Study </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-b-setup-play/index.html">Lab-07a Play Setup </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-c-playlist-1/index.html">Lab-07b Playlist 1 </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-01-harp/index.html">Lab-5a Harp & Surge </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-a-playlist-2/index.html">Lab-08a Playlist-2 </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-b-playlist-3/index.html">Lab-08b Playlist-3 </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-02-templates/index.html">Lab-5b Templating </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-a-todolist/index.html">Lab-09b Todolist-1 </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-b-playlist-4/index.html">Lab-09a Playlist-4 </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic05-templating/book-03-nav-templates/index.html">Lab-5c Templating & Nav </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic10-sessions/book-sessions/index.html">Lab-10 Todolist-2 </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-1/index.html">Lab-11a Playlist Review </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-a/index.html">Lab-6a Semantic UI 1 </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-2/index.html">Lab-11b Playlist 5 </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-a-deploy/index.html">Lab-12a Deploy </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic06-css-frameworks/book-b/index.html">Lab-6b Semantic UI 2 </a>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-b-sourcetree/index.html">Lab-12b Git Setup </a>
+        
       
-    
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-c-git/index.html">Lab-12c Git Usage </a>
+        
       
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-b-setup-play/index.html">Lab-07a Play Setup </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic07-starting-play/book-c-playlist-1/index.html">Lab-07b Playlist 1 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-a-playlist-2/index.html">Lab-08a Playlist-2 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic08-introducing-mvc/book-b-playlist-3/index.html">Lab-08b Playlist-3 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-a-todolist/index.html">Lab-09b Todolist-1 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic09-forms/book-b-playlist-4/index.html">Lab-09a Playlist-4 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic10-sessions/book-sessions/index.html">Lab-10 Todolist-2 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-1/index.html">Lab-11a Playlist Review </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic11-playlist-sessions/book-2/index.html">Lab-11b Playlist 5 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-a-deploy/index.html">Lab-12a Deploy </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-b-sourcetree/index.html">Lab-12b Git Setup </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/web-development//topic12-deployment-review/book-c-git/index.html">Lab-12c Git Usage </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Lab-6a Semantic UI 1">
-          <h1>Objectives</h1>
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Lab-6a Semantic UI 1">
+            <h1>Objectives</h1>
 <p>Rebuild the iot web site using semantic-ui</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Setup</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Setup</h1>
 <p>The starting point for this lab is the final version of the project from the last lab:</p>
 <ul>
 <li>Download Archive: <a href="https://github.com/wit-computing/iot-web/releases/tag/V07">https://github.com/wit-computing/iot-web/releases/tag/V07</a></li>
@@ -317,10 +345,10 @@ h3 {
     └── style.css</code></pre>
 <p>Make sure you can see this structure in Windows Explorer / Mac Finder.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>semantic.css</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>semantic.css</h1>
 <p>The first step is to download and save the semantic style sheet. Download from here:</p>
 <ul>
 <li><a href="https://semantic-ui.com/introduction/getting-started.html">https://semantic-ui.com/introduction/getting-started.html</a></li>
@@ -390,10 +418,10 @@ h3 {
     │   └── project.html
     └── style.css</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>First Steps...</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>First Steps...</h1>
 <p>Open index.html and introduce a link to the style sheet we downloaded in the last step:</p>
 <pre><code>  &lt;link rel=&quot;stylesheet&quot; href=&quot;assets/semantic/semantic.css&quot;&gt;</code></pre>
 <p>This goes into the <code>&lt;head&gt;</code> section of index such that it will look like this:</p>
@@ -417,10 +445,10 @@ h3 {
 <p>The site will look like this again:</p>
 <p><img src="img/01.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Container</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Container</h1>
 <p>The <code>&lt;body&gt;</code> of our index page looks like this:</p>
 <pre><code>&lt;body&gt;
 
@@ -528,10 +556,10 @@ h3 {
 <p>Your page should look like this:</p>
 <p><img src="img/02.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Segment</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Segment</h1>
 <p>The cornerstone of many of the styles in Semantic-UI is the <code>segment</code> class:</p>
 <ul>
 <li><a href="http://semantic-ui.com/elements/segment.html">http://semantic-ui.com/elements/segment.html</a></li>
@@ -615,10 +643,10 @@ sponsors.ejs</p>
 <p>The pages will start to look like this:</p>
 <p><img src="img/04.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Strands</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Strands</h1>
 <p>We need to make similar adjustments to all of the pages in the strands folder.</p>
 <p>Replace the head section with the version to include Semantic-ui</p>
 <pre><code>&lt;head&gt;
@@ -704,10 +732,10 @@ sponsors.ejs</p>
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Grids I</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Grids I</h1>
 <p>This is our current header section:</p>
 <pre><code>&lt;header class=&quot;ui segment&quot;&gt;
   &lt;h2&gt;
@@ -781,10 +809,10 @@ sponsors.ejs</p>
   &lt;/header&gt;</code></pre>
 <p>(This has the path to semantic adjusted)</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Grids II</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Grids II</h1>
 <p>We can apply the same principles to tidy up the  sponsors section the home page:</p>
 <pre><code>&lt;section class=&quot;ui segment&quot;&gt;
   &lt;h4&gt; Supported by leading edge research at... &lt;/h4&gt;
@@ -846,10 +874,10 @@ sponsors.ejs</p>
 &lt;/section&gt;</code></pre>
 <p><img src="img/12.png" alt=""></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="09">
-          <h1>Grids III</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="09">
+            <h1>Grids III</h1>
 <p>Currently our curriculum section looks like this:</p>
 <p><img src="img/14.png" alt=""></p>
 <p>We would like the reformat it as follows:</p>
@@ -969,10 +997,10 @@ sponsors.ejs</p>
 <p><img src="img/15.png" alt=""></p>
 <p>Note the use of blank lines in the code to help keep the structure readable.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Archive</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Archive</h1>
 <p>This is the version of the site at this stage:</p>
 <ul>
 <li><a href="https://github.com/wit-computing/iot-web/releases/tag/Lab05a">https://github.com/wit-computing/iot-web/releases/tag/Lab05a</a></li>
@@ -987,14 +1015,16 @@ sponsors.ejs</p>
 <li><a href="http://semantic-ui.com/elements/icon.html">http://semantic-ui.com/elements/icon.html</a></li>
 </ul>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -1014,7 +1044,7 @@ sponsors.ejs</p>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -1047,6 +1077,16 @@ sponsors.ejs</p>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
